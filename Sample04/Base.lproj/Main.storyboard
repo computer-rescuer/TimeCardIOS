@@ -142,7 +142,7 @@
         <!--設定-->
         <scene sceneID="bsU-dl-iWI">
             <objects>
-                <viewController id="d1d-a5-eLM" customClass="ViewController" customModule="Sample04" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d1d-a5-eLM" customClass="ViewController_Setting" customModule="Sample04" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="igB-Dk-6tu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
