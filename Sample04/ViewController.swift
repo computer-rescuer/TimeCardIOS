@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         crk_upload();
-       // let crk_lable_ins = crk_label();
+//        let crk_lable_ins = crk_label();
 //        L2.text="2"
 //        L1.text = "Befor"
         Download_crk(stUrl: "https://minkara.carview.co.jp",
@@ -63,13 +63,12 @@ class ViewController: UIViewController {
         let tf1  = UserID.text!
         let tf2  = Password.text!
         let tf3  = Name.text!
-        let tf4  = Name.text!
-        let tf5  = Name.text!
-        let tf6  = Name.text!
-        let tf7  = Name.text!
+        let tf4  = Syain_cd.text!
+        let tf5  = Area1.text!
+        let tf6  = Area2.text!
+        let tf7  = Area3.text!
         
-        
-        let alltf = tf1 + "," + tf2 + "," + tf3
+        let alltf = tf1 + "," + tf2 + "," + tf3 + "," + tf4 + "," + tf5 + "," + tf6 + "," + tf7
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             fatalError("フォルダURL取得エラー")
