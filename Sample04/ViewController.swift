@@ -29,8 +29,8 @@ class ViewController: UIViewController {
         Download_crk(stUrl: "https://minkara.carview.co.jp",
             fn: { data in
                 DispatchQueue.main.async {
-                    //取得した文字列データをUITextViewに収納
-//                    self.T1.text = data
+//                    取得した文字列データをUITextViewに収納
+                    self.T1.text = data
                 }
         })
     }
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         let  str:String = self.readFromFile()
         let arr:[String] = str.components(separatedBy: ",")
         
-        let tw = "10" + "," + arr[3] + ","
+        let tw = "10" + "," + arr[2] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + arr[4] + "," + Utility.nowTimeGet5()
         
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
         }
         
         /// ②対象のファイルURL取得
-        let fileURL = dirURL.appendingPathComponent("output_main.txt")
+        let fileURL = dirURL.appendingPathComponent("main.txt")
 
         /// ③ファイルの書き込み
         do {

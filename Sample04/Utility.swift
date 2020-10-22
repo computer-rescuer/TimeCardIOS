@@ -28,5 +28,32 @@ class Utility {
         let str = formatter.string(from: now as Date)
         return str
     }
+    class func nowTimeGet3() -> String {
+        // 現在時刻を取得
+        let now = NSDate()
+        let formatter = DateFormatter()
+        // 好きなフォーマットを設定する
+        formatter.dateFormat = "yyyyMMdd"
+        let str = formatter.string(from: now as Date)
+        return str
+    }
+    class func nowTimeGet4() -> String {
+        // 現在時刻を取得
+        let now = NSDate()
+        let formatter = DateFormatter()
+        // 好きなフォーマットを設定する
+        formatter.dateFormat = "HHmm"
+        let str = formatter.string(from: now as Date)
+        return str
+    }
+    class func nowTimeGet5() -> String {
+        // 現在時刻を取得
+        let now = NSDate()
+        let formatter = DateFormatter()
+        // 好きなフォーマットを設定する
+        formatter.dateFormat = "yyyyMMddHHmm"
+        let str = formatter.string(from: now as Date)
+        return str
+    }
 }
 
