@@ -20,6 +20,7 @@
 		440488A1253ACA57002516A1 /* Upload_crk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440488A0253ACA57002516A1 /* Upload_crk.swift */; };
 		4452FE1A253AF7D80080D819 /* ViewController_Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452FE19253AF7D80080D819 /* ViewController_Work.swift */; };
 		447E9848253B6FAB00DB1983 /* Download_crk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9847253B6FAB00DB1983 /* Download_crk.swift */; };
+		449768FD254134C600483D35 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449768FC254134C600483D35 /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		440488A0253ACA57002516A1 /* Upload_crk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload_crk.swift; sourceTree = "<group>"; };
 		4452FE19253AF7D80080D819 /* ViewController_Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Work.swift; sourceTree = "<group>"; };
 		447E9847253B6FAB00DB1983 /* Download_crk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download_crk.swift; sourceTree = "<group>"; };
+		449768FC254134C600483D35 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				44048875253A78AC002516A1 /* LaunchScreen.storyboard */,
 				44048878253A78AC002516A1 /* Info.plist */,
 				440488A0253ACA57002516A1 /* Upload_crk.swift */,
+				449768FC254134C600483D35 /* ViewController2.swift */,
 				4452FE19253AF7D80080D819 /* ViewController_Work.swift */,
 				08A6C496253FD7DB00E08B55 /* ViewController_Setting.swift */,
 			);
@@ -275,6 +278,7 @@
 			files = (
 				4404886F253A78AB002516A1 /* ViewController.swift in Sources */,
 				4404886B253A78AB002516A1 /* AppDelegate.swift in Sources */,
+				449768FD254134C600483D35 /* ViewController2.swift in Sources */,
 				08A6C497253FD7DB00E08B55 /* ViewController_Setting.swift in Sources */,
 				4452FE1A253AF7D80080D819 /* ViewController_Work.swift in Sources */,
 				4404886D253A78AB002516A1 /* SceneDelegate.swift in Sources */,

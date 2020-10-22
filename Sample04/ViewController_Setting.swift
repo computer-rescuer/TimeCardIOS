@@ -18,9 +18,10 @@ class ViewController_Setting:UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
         let  str:String = self.readFromFile()
         let arr:[String] = str.components(separatedBy: ",")
-        
+    
         UserID.text=arr[0]
         Password.text=arr[1]
         Name.text=arr[2]
@@ -28,6 +29,7 @@ class ViewController_Setting:UIViewController{
         Area1.text=arr[4]
         Area2.text=arr[5]
         Area3.text=arr[6]
+ */
     }
     @IBAction func Save(_ sender: Any) {
         
@@ -46,7 +48,7 @@ class ViewController_Setting:UIViewController{
         }
         
         /// ②対象のファイルURL取得
-        let fileURL = dirURL.appendingPathComponent("output1.txt")
+        let fileURL = dirURL.appendingPathComponent("setting.txt")
 
         /// ③ファイルの書き込み
         do {
@@ -61,7 +63,7 @@ class ViewController_Setting:UIViewController{
             fatalError("フォルダURL取得エラー")
         }
         /// ②対象のファイルURL取得
-        let fileURL = dirURL.appendingPathComponent("output1.txt")
+        let fileURL = dirURL.appendingPathComponent("setting.txt")
  
         /// ③ファイルの読み込み
         guard let fileContents = try? String(contentsOf: fileURL)
