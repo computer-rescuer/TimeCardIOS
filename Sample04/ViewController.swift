@@ -8,18 +8,32 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var B1: UIButton!
+    @IBOutlet weak var  B1: UIButton!
     @IBOutlet weak var T1: UITextView!
     @IBOutlet weak var nowTimeLabel: UILabel!
     @IBOutlet weak var nowTimeLabel2: UILabel!
-    
+    @IBOutlet weak var NameLabel: UILabel!
+    @IBOutlet weak var UserIDLabel: UILabel!
+    @IBOutlet weak var PasswordLabel: UILabel!
+    @IBOutlet weak var Syain_cdLabel: UILabel!
+    @IBOutlet weak var AreaLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // 現在時刻を取得し、表示する
         nowTimeLabel.text = Utility.nowTimeGet()
         nowTimeLabel2.text = Utility.nowTimeGet2()
+        
+        //端末内テキストから名前を取得し、表示する
+        let  str:String = self.readFromFile()
+        let arr:[String] = str.components(separatedBy: ",")
+                
+        UserIDLabel.text = arr[0]
+        PasswordLabel.text = arr[1]
+        NameLabel.text = arr[2]
+        Syain_cdLabel.text = arr[3]
         
         // Do any additional setup after loading the view.
         crk_upload();
@@ -37,11 +51,10 @@ class ViewController: UIViewController {
     
     @IBAction func Push(_ sender: Any) {
         
-        let  str:String = self.readFromFile()
-        let arr:[String] = str.components(separatedBy: ",")
-        
-        let tw = "10" + "," + arr[2] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + arr[4] + "," + Utility.nowTimeGet5()
-        
+        let UserID = UserIDLabel.text!
+        let Area = AreaLabel.text!
+        let tw = "10" + "," + UserID + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + Area + "," + Utility.nowTimeGet5()
+
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             fatalError("フォルダURL取得エラー")
@@ -54,8 +67,21 @@ class ViewController: UIViewController {
         do {
             try tw.write(to: fileURL, atomically: true, encoding: .utf8)
         } catch {
-            print("Error: \(error)")
+            /// ④失敗メッセージの表示
+            //アラートのタイトル
+            let dialog = UIAlertController(title: "出勤情報の登録に失敗しました。", message: "", preferredStyle: .alert)
+            //ボタンのタイトル
+            dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            //実際に表示させる
+            self.present(dialog, animated: true, completion: nil)
         }
+        /// ④完了メッセージの表示
+        //アラートのタイトル
+        let dialog = UIAlertController(title: "出勤情報を登録しました。", message: "", preferredStyle: .alert)
+        //ボタンのタイトル
+        dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        //実際に表示させる
+        self.present(dialog, animated: true, completion: nil)
     }
     
     func readFromFile() -> String {

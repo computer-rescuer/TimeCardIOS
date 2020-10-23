@@ -56,7 +56,56 @@ class ViewController_Setting:UIViewController{
         } catch {
             print("Error: \(error)")
         }
+        /// ④完了メッセージの表示
+        //アラートのタイトル
+        let dialog = UIAlertController(title: "ユーザ情報を保存しました。", message: "", preferredStyle: .alert)
+        //ボタンのタイトル
+        dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        //実際に表示させる
+        self.present(dialog, animated: true, completion: nil)
     }
+    
+    @IBAction func Clear(_ sender: Any) {
+        UserID.text=""
+        Password.text=""
+        Name.text=""
+        Syain_cd.text=""
+        Area1.text=""
+        Area2.text=""
+        Area3.text=""
+        
+        let tf1  = UserID.text!
+        let tf2  = Password.text!
+        let tf3  = Name.text!
+        let tf4  = Syain_cd.text!
+        let tf5  = Area1.text!
+        let tf6  = Area2.text!
+        let tf7  = Area3.text!
+        
+        let alltf = tf1 + "," + tf2 + "," + tf3 + "," + tf4 + "," + tf5 + "," + tf6 + "," + tf7
+        /// ①DocumentsフォルダURL取得
+        guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            fatalError("フォルダURL取得エラー")
+        }
+        
+        /// ②対象のファイルURL取得
+        let fileURL = dirURL.appendingPathComponent("setting.txt")
+
+        /// ③ファイルの書き込み
+        do {
+            try alltf.write(to: fileURL, atomically: true, encoding: .utf8)
+        } catch {
+            print("Error: \(error)")
+        }
+        /// ④完了メッセージの表示
+        //アラートのタイトル
+        let dialog = UIAlertController(title: "ユーザ情報をクリアしました。", message: "", preferredStyle: .alert)
+        //ボタンのタイトル
+        dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        //実際に表示させる
+        self.present(dialog, animated: true, completion: nil)
+    }
+    
     func readFromFile() -> String {
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
