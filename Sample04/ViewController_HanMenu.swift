@@ -36,6 +36,14 @@ class ViewController_HanMenu: UIViewController {
     @IBAction func B1_Click(_ sender: Any) {
         Ans1.text="4"
     }
+    @IBAction func B2_Click(_ sender: Any) {
+            Ans1.text="5"
+        
+    }
+    @IBAction func B3_Click(_ sender: Any) {
+            Ans1.text="6"
+        
+    }
     func readFromFile() -> String {
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {

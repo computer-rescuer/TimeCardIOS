@@ -146,6 +146,7 @@
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="B1_Click:" destination="TlV-xA-P2B" eventType="touchUpInside" id="LrN-pZ-LY5"/>
+                                            <action selector="B3_Click:" destination="TlV-xA-P2B" eventType="touchUpInside" id="INZ-C2-EvY"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mkl-cw-HwD">
@@ -161,6 +162,7 @@
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="B1_Click:" destination="TlV-xA-P2B" eventType="touchUpInside" id="Tf2-HN-KyB"/>
+                                            <action selector="B2_Click:" destination="TlV-xA-P2B" eventType="touchUpInside" id="FJS-gW-gG8"/>
                                         </connections>
                                     </button>
                                 </subviews>
