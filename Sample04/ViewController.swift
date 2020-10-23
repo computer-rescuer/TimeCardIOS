@@ -8,10 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     @IBOutlet weak var B1: UIButton!
     @IBOutlet weak var T1: UITextView!
     @IBOutlet weak var nowTimeLabel: UILabel!
     @IBOutlet weak var nowTimeLabel2: UILabel!
+    
+    var P2 = "ZZZ"
+    @IBOutlet weak var T2: UITextField!
+    
     
     
     override func viewDidLoad() {
@@ -19,7 +24,7 @@ class ViewController: UIViewController {
         
         // 現在時刻を取得し、表示する
         nowTimeLabel.text = Utility.nowTimeGet()
-        nowTimeLabel2.text = Utility.nowTimeGet2()
+   //     nowTimeLabel2.text = Utility.nowTimeGet2()
         
         // Do any additional setup after loading the view.
         crk_upload();
@@ -30,7 +35,7 @@ class ViewController: UIViewController {
             fn: { data in
                 DispatchQueue.main.async {
 //                    取得した文字列データをUITextViewに収納
-                    self.T1.text = data
+         //           self.T1.text = data
                 }
         })
     }
@@ -41,6 +46,9 @@ class ViewController: UIViewController {
         let arr:[String] = str.components(separatedBy: ",")
         
         let tw = "10" + "," + arr[2] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + arr[4] + "," + Utility.nowTimeGet5()
+        
+        T1.text=UserDefaults.standard.string( forKey: "keyOne")
+        
         
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {

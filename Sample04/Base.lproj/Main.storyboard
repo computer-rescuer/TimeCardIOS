@@ -11,7 +11,7 @@
         <!--出勤-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sample04" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC_Main" id="BYZ-38-t0r" customClass="ViewController" customModule="Sample04" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,6 +66,20 @@
                                     <action selector="Push:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wWk-Z7-zNe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JxM-0W-0bd">
+                                <rect key="frame" x="348" y="88" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="TlV-xA-P2B" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Mx6-3W-ugZ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="htH-73-xrX">
+                                <rect key="frame" x="297" y="131" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,8 +88,9 @@
                     <connections>
                         <outlet property="B1" destination="5a3-lf-puq" id="dy0-8s-bSf"/>
                         <outlet property="T1" destination="S0I-R3-W6X" id="gzk-De-E7g"/>
-                        <outlet property="nowTimeLabel" destination="MDs-yh-Oll" id="RHO-Zy-zIi"/>
-                        <outlet property="nowTimeLabel2" destination="z9u-Xt-Do0" id="8Ju-d8-6nC"/>
+                        <outlet property="T2" destination="htH-73-xrX" id="PUh-DX-fcR"/>
+                        <outlet property="nowTimeLabel" destination="MDs-yh-Oll" id="ZVn-y9-xhs"/>
+                        <outlet property="nowTimeLabel2" destination="z9u-Xt-Do0" id="1tH-aZ-mnY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -102,6 +117,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AeO-oa-kJ3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="75.669642857142847"/>
+        </scene>
+        <!--View Controller Han Menu-->
+        <scene sceneID="Ud9-Rw-NUe">
+            <objects>
+                <viewController id="TlV-xA-P2B" customClass="ViewController_HanMenu" customModule="Sample04" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" tag="1" contentMode="scaleToFill" id="GiY-19-Nma" customClass="ViewControler">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ekr-Gx-U1Q">
+                                <rect key="frame" x="174" y="44" width="240" height="213"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eae-xY-aMM">
+                                        <rect key="frame" x="8" y="15" width="224" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="B1_Click:" destination="TlV-xA-P2B" eventType="touchUpInside" id="pjd-qF-auy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilg-xH-Et0">
+                                        <rect key="frame" x="8" y="95" width="224" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="B1_Click:" destination="TlV-xA-P2B" eventType="touchUpInside" id="LrN-pZ-LY5"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mkl-cw-HwD">
+                                        <rect key="frame" x="34" y="157" width="97" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yk6-ce-XtU">
+                                        <rect key="frame" x="8" y="54" width="224" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="B1_Click:" destination="TlV-xA-P2B" eventType="touchUpInside" id="Tf2-HN-KyB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bXH-0S-79c"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.40065817636986301" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="Ans1" destination="Mkl-cw-HwD" id="TQm-15-H68"/>
+                        <outlet property="B1" destination="eae-xY-aMM" id="VY7-Vq-tSh"/>
+                        <outlet property="B2" destination="yk6-ce-XtU" id="yw2-df-deH"/>
+                        <outlet property="B3" destination="Ilg-xH-Et0" id="k7G-U8-PVF"/>
+                        <outlet property="V1" destination="Ekr-Gx-U1Q" id="29i-uH-h0F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZOB-mp-7py" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="534.78260869565224" y="-17.410714285714285"/>
         </scene>
         <!--欠勤-->
         <scene sceneID="rYh-ua-C9f">
