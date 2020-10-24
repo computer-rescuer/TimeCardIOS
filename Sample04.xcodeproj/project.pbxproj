@@ -10,6 +10,7 @@
 		08A6C497253FD7DB00E08B55 /* ViewController_Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6C496253FD7DB00E08B55 /* ViewController_Setting.swift */; };
 		08A6C4A1253FEF0E00E08B55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44048870253A78AB002516A1 /* Main.storyboard */; };
 		08A6C4A625401FBD00E08B55 /* AttendButton_Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6C4A525401FBD00E08B55 /* AttendButton_Custom.swift */; };
+		08BB6B9225415320000EF734 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08BB6B9125415320000EF734 /* Utility.swift */; };
 		4404886B253A78AB002516A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404886A253A78AB002516A1 /* AppDelegate.swift */; };
 		4404886D253A78AB002516A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404886C253A78AB002516A1 /* SceneDelegate.swift */; };
 		4404886F253A78AB002516A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4404886E253A78AB002516A1 /* ViewController.swift */; };
@@ -20,7 +21,8 @@
 		440488A1253ACA57002516A1 /* Upload_crk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440488A0253ACA57002516A1 /* Upload_crk.swift */; };
 		4452FE1A253AF7D80080D819 /* ViewController_Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452FE19253AF7D80080D819 /* ViewController_Work.swift */; };
 		447E9848253B6FAB00DB1983 /* Download_crk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9847253B6FAB00DB1983 /* Download_crk.swift */; };
-		449768FD254134C600483D35 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449768FC254134C600483D35 /* ViewController2.swift */; };
+		44AE519F25424B21002E61B0 /* ViewController_HanMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AE519E25424B21002E61B0 /* ViewController_HanMenu.swift */; };
+		44AE51F42542C0B5002E61B0 /* ViewController_tt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AE51F32542C0B5002E61B0 /* ViewController_tt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,7 @@
 /* Begin PBXFileReference section */
 		08A6C496253FD7DB00E08B55 /* ViewController_Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Setting.swift; sourceTree = "<group>"; };
 		08A6C4A525401FBD00E08B55 /* AttendButton_Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendButton_Custom.swift; sourceTree = "<group>"; };
+		08BB6B9125415320000EF734 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		44048867253A78AB002516A1 /* Sample04.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample04.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4404886A253A78AB002516A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4404886C253A78AB002516A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +63,8 @@
 		440488A0253ACA57002516A1 /* Upload_crk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload_crk.swift; sourceTree = "<group>"; };
 		4452FE19253AF7D80080D819 /* ViewController_Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Work.swift; sourceTree = "<group>"; };
 		447E9847253B6FAB00DB1983 /* Download_crk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download_crk.swift; sourceTree = "<group>"; };
-		449768FC254134C600483D35 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		44AE519E25424B21002E61B0 /* ViewController_HanMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_HanMenu.swift; sourceTree = "<group>"; };
+		44AE51F32542C0B5002E61B0 /* ViewController_tt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_tt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,16 +118,18 @@
 				447E9847253B6FAB00DB1983 /* Download_crk.swift */,
 				4404886A253A78AB002516A1 /* AppDelegate.swift */,
 				4404886C253A78AB002516A1 /* SceneDelegate.swift */,
-				4404886E253A78AB002516A1 /* ViewController.swift */,
-				44048870253A78AB002516A1 /* Main.storyboard */,
 				08A6C4A525401FBD00E08B55 /* AttendButton_Custom.swift */,
 				44048873253A78AC002516A1 /* Assets.xcassets */,
 				44048875253A78AC002516A1 /* LaunchScreen.storyboard */,
 				44048878253A78AC002516A1 /* Info.plist */,
 				440488A0253ACA57002516A1 /* Upload_crk.swift */,
-				449768FC254134C600483D35 /* ViewController2.swift */,
+				08BB6B9125415320000EF734 /* Utility.swift */,
+				44048870253A78AB002516A1 /* Main.storyboard */,
+				4404886E253A78AB002516A1 /* ViewController.swift */,
+				44AE519E25424B21002E61B0 /* ViewController_HanMenu.swift */,
 				4452FE19253AF7D80080D819 /* ViewController_Work.swift */,
 				08A6C496253FD7DB00E08B55 /* ViewController_Setting.swift */,
+				44AE51F32542C0B5002E61B0 /* ViewController_tt.swift */,
 			);
 			path = Sample04;
 			sourceTree = "<group>";
@@ -278,12 +284,14 @@
 			files = (
 				4404886F253A78AB002516A1 /* ViewController.swift in Sources */,
 				4404886B253A78AB002516A1 /* AppDelegate.swift in Sources */,
-				449768FD254134C600483D35 /* ViewController2.swift in Sources */,
 				08A6C497253FD7DB00E08B55 /* ViewController_Setting.swift in Sources */,
+				44AE519F25424B21002E61B0 /* ViewController_HanMenu.swift in Sources */,
 				4452FE1A253AF7D80080D819 /* ViewController_Work.swift in Sources */,
 				4404886D253A78AB002516A1 /* SceneDelegate.swift in Sources */,
 				08A6C4A625401FBD00E08B55 /* AttendButton_Custom.swift in Sources */,
+				44AE51F42542C0B5002E61B0 /* ViewController_tt.swift in Sources */,
 				447E9848253B6FAB00DB1983 /* Download_crk.swift in Sources */,
+				08BB6B9225415320000EF734 /* Utility.swift in Sources */,
 				440488A1253ACA57002516A1 /* Upload_crk.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

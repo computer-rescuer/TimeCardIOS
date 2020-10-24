@@ -8,6 +8,7 @@
 import Foundation
 func Download_crk(stUrl:String, fn:@escaping (_ data: String)->Void)
 {
+    
     let u = URL(string: stUrl)
     var r = URLRequest(url:u!)
     r.httpMethod = "GET"
@@ -18,4 +19,5 @@ func Download_crk(stUrl:String, fn:@escaping (_ data: String)->Void)
             fn(String(data: data, encoding: .utf8) ?? "")
         }
         }.resume()
-}
+
+ }

@@ -8,84 +8,98 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     @IBOutlet weak var B1: UIButton!
-    @IBOutlet weak var L1: UILabel!
-    
-    @IBOutlet weak var L2: UILabel!
     @IBOutlet weak var T1: UITextView!
+    @IBOutlet weak var nowTimeLabel: UILabel!
+    @IBOutlet weak var nowTimeLabel2: UILabel!
     
-    @IBOutlet weak var UserID: UITextField!
-    @IBOutlet weak var Password: UITextField!
-    @IBOutlet weak var Name: UITextField!
-    @IBOutlet weak var Syain_cd: UITextField!
-    @IBOutlet weak var Area1: UITextField!
-    @IBOutlet weak var Area2: UITextField!
-    @IBOutlet weak var Area3: UITextField!
+    var P2 = "ZZZ"
+    @IBOutlet weak var T2: UITextField!
     
-    override func viewDidLoad() {
+    //URL to our web service
+    let URL_SAVE_BOY = "http://153.156.43.33/Android/pass_check.php"
+    
+  override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 現在時刻を取得し、表示する
+        nowTimeLabel.text = Utility.nowTimeGet()
+   //     nowTimeLabel2.text = Utility.nowTimeGet2()
+        
         // Do any additional setup after loading the view.
-        crk_upload();
+       
 //        let crk_lable_ins = crk_label();
 //        L2.text="2"
 //        L1.text = "Befor"
-        Download_crk(stUrl: "https://minkara.carview.co.jp",
+        Download_crk(stUrl: "http://www.ymori.com/itest/test.txt",
             fn: { data in
                 DispatchQueue.main.async {
-                    //取得した文字列データをUITextViewに収納
-//                    self.T1.text = data
+//                    取得した文字列データをUITextViewに収納
+                   self.T1.text = data
                 }
         })
-
-
     }
-    @IBAction func Push(_ sender: Any) {
-        L1.text = "yyy"
-        let line_text  = "201807001\n小堀 昌夫"
+    
+    @IBAction func B1_Click(_ sender: Any) {
+        //URL to our web service
+        let  str:String = self.readFromFile()
+        let arr:[String] = str.components(separatedBy: ",")
+        
+        let tw = "10" + "," + arr[2] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + arr[4] + "," + Utility.nowTimeGet5()
+        
+        T1.text=UserDefaults.standard.string( forKey: "keyOne")
+        
+        
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             fatalError("フォルダURL取得エラー")
         }
         
         /// ②対象のファイルURL取得
-        let fileURL = dirURL.appendingPathComponent("output1.txt")
+        let fileURL = dirURL.appendingPathComponent("main.txt")
 
         /// ③ファイルの書き込み
         do {
-            try line_text.write(to: fileURL, atomically: true, encoding: .utf8)
+            try tw.write(to: fileURL, atomically: true, encoding: .utf8)
         } catch {
             print("Error: \(error)")
         }
+        crk_upload();
     }
 
-    @IBAction func Save(_ sender: Any) {
-     
-        let tf1  = UserID.text!
-        let tf2  = Password.text!
-        let tf3  = Name.text!
-        let tf4  = Syain_cd.text!
-        let tf5  = Area1.text!
-        let tf6  = Area2.text!
-        let tf7  = Area3.text!
         
-        let alltf = tf1 + "," + tf2 + "," + tf3 + "," + tf4 + "," + tf5 + "," + tf6 + "," + tf7
-        /// ①DocumentsフォルダURL取得
-        guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            fatalError("フォルダURL取得エラー")
+
+
+        
+  
+    
+    
+    func readFromFile() -> String {
+                /// ①DocumentsフォルダURL取得
+        guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        else {fatalError("フォルダURL取得エラー")
         }
-        
         /// ②対象のファイルURL取得
-        let fileURL = dirURL.appendingPathComponent("output1.txt")
-
-        /// ③ファイルの書き込み
-        do {
-            try alltf.write(to: fileURL, atomically: true, encoding: .utf8)
-        } catch {
-            print("Error: \(error)")
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        if let pathComponent = url.appendingPathComponent("setting.txt"){
+            let filePath = pathComponent.path
+            let fileManager = FileManager.default
+            if fileManager.fileExists(atPath: filePath) {
+                print("FILE AVAILABLE")
+            } else {
+                return ""
+            }
+        } else {
+            return ""
         }
+ 
+        /// ③ファイルの読み込み
+        let fileURL = dirURL.appendingPathComponent("setting.txt")
+        guard let fileContents = try? String(contentsOf: fileURL)
+        else {fatalError("ファイル読み込みエラー")
+        }
+        return fileContents
     }
-    
-    
-    
-    
 }

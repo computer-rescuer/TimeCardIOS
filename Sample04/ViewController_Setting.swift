@@ -18,18 +18,18 @@ class ViewController_Setting:UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
         let  str:String = self.readFromFile()
         let arr:[String] = str.components(separatedBy: ",")
-    
-        UserID.text=arr[0]
-        Password.text=arr[1]
-        Name.text=arr[2]
-        Syain_cd.text=arr[3]
-        Area1.text=arr[4]
-        Area2.text=arr[5]
-        Area3.text=arr[6]
- */
+        
+        if str != ""{
+            UserID.text=arr[0]
+            Password.text=arr[1]
+            Name.text=arr[2]
+            Syain_cd.text=arr[3]
+            Area1.text=arr[4]
+            Area2.text=arr[5]
+            Area3.text=arr[6]
+        }
     }
     @IBAction func Save(_ sender: Any) {
         
@@ -58,20 +58,31 @@ class ViewController_Setting:UIViewController{
         }
     }
     func readFromFile() -> String {
-                /// ①DocumentsフォルダURL取得
+        /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             fatalError("フォルダURL取得エラー")
         }
         /// ②対象のファイルURL取得
-        let fileURL = dirURL.appendingPathComponent("setting.txt")
- 
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+        let url = NSURL(fileURLWithPath: path)
+        if let pathComponent = url.appendingPathComponent("setting.txt"){
+            let filePath = pathComponent.path
+            let fileManager = FileManager.default
+            if fileManager.fileExists(atPath: filePath) {
+                print("FILE AVAILABLE")
+            } else {
+                return ""
+            }
+        } else {
+            return ""
+        }
+
         /// ③ファイルの読み込み
+        let fileURL = dirURL.appendingPathComponent("setting.txt")
         guard let fileContents = try? String(contentsOf: fileURL)
-        else {
+             else {
             fatalError("ファイル読み込みエラー")
         }
         return fileContents
     }
 }
-
-

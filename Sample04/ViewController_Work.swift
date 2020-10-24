@@ -33,7 +33,7 @@ class ViewController_Work: UIViewController , UIPickerViewDelegate,
         
         // 決定バーの生成
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
-        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        _ = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
 //        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
 //        toolbar.setItems([spacelItem, doneItem], animated: true)
         
