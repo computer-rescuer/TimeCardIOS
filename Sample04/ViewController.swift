@@ -17,9 +17,10 @@ class ViewController: UIViewController {
     var P2 = "ZZZ"
     @IBOutlet weak var T2: UITextField!
     
+    //URL to our web service
+    let URL_SAVE_BOY = "http://153.156.43.33/Android/pass_check.php"
     
-    
-    override func viewDidLoad() {
+  override func viewDidLoad() {
         super.viewDidLoad()
         
         // 現在時刻を取得し、表示する
@@ -27,21 +28,21 @@ class ViewController: UIViewController {
    //     nowTimeLabel2.text = Utility.nowTimeGet2()
         
         // Do any additional setup after loading the view.
-        crk_upload();
+       
 //        let crk_lable_ins = crk_label();
 //        L2.text="2"
 //        L1.text = "Befor"
-        Download_crk(stUrl: "https://minkara.carview.co.jp",
+        Download_crk(stUrl: "http://www.ymori.com/itest/test.txt",
             fn: { data in
                 DispatchQueue.main.async {
 //                    取得した文字列データをUITextViewに収納
-         //           self.T1.text = data
+                   self.T1.text = data
                 }
         })
     }
     
-    @IBAction func Push(_ sender: Any) {
-        
+    @IBAction func B1_Click(_ sender: Any) {
+        //URL to our web service
         let  str:String = self.readFromFile()
         let arr:[String] = str.components(separatedBy: ",")
         
@@ -64,7 +65,15 @@ class ViewController: UIViewController {
         } catch {
             print("Error: \(error)")
         }
+        crk_upload();
     }
+
+        
+
+
+        
+  
+    
     
     func readFromFile() -> String {
                 /// ①DocumentsフォルダURL取得

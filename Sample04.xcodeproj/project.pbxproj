@@ -22,6 +22,7 @@
 		4452FE1A253AF7D80080D819 /* ViewController_Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452FE19253AF7D80080D819 /* ViewController_Work.swift */; };
 		447E9848253B6FAB00DB1983 /* Download_crk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9847253B6FAB00DB1983 /* Download_crk.swift */; };
 		44AE519F25424B21002E61B0 /* ViewController_HanMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AE519E25424B21002E61B0 /* ViewController_HanMenu.swift */; };
+		44AE51F42542C0B5002E61B0 /* ViewController_tt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AE51F32542C0B5002E61B0 /* ViewController_tt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		4452FE19253AF7D80080D819 /* ViewController_Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Work.swift; sourceTree = "<group>"; };
 		447E9847253B6FAB00DB1983 /* Download_crk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download_crk.swift; sourceTree = "<group>"; };
 		44AE519E25424B21002E61B0 /* ViewController_HanMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_HanMenu.swift; sourceTree = "<group>"; };
+		44AE51F32542C0B5002E61B0 /* ViewController_tt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_tt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				44AE519E25424B21002E61B0 /* ViewController_HanMenu.swift */,
 				4452FE19253AF7D80080D819 /* ViewController_Work.swift */,
 				08A6C496253FD7DB00E08B55 /* ViewController_Setting.swift */,
+				44AE51F32542C0B5002E61B0 /* ViewController_tt.swift */,
 			);
 			path = Sample04;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				4452FE1A253AF7D80080D819 /* ViewController_Work.swift in Sources */,
 				4404886D253A78AB002516A1 /* SceneDelegate.swift in Sources */,
 				08A6C4A625401FBD00E08B55 /* AttendButton_Custom.swift in Sources */,
+				44AE51F42542C0B5002E61B0 /* ViewController_tt.swift in Sources */,
 				447E9848253B6FAB00DB1983 /* Download_crk.swift in Sources */,
 				08BB6B9225415320000EF734 /* Utility.swift in Sources */,
 				440488A1253ACA57002516A1 /* Upload_crk.swift in Sources */,
