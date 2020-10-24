@@ -8,43 +8,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
     @IBOutlet weak var B1: UIButton!
     @IBOutlet weak var T1: UITextView!
     @IBOutlet weak var nowTimeLabel: UILabel!
     @IBOutlet weak var nowTimeLabel2: UILabel!
-    
-    var P2 = "ZZZ"
     @IBOutlet weak var T2: UITextField!
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // 現在時刻を取得し、表示する
         nowTimeLabel.text = Utility.nowTimeGet()
-   //     nowTimeLabel2.text = Utility.nowTimeGet2()
-        
-        // Do any additional setup after loading the view.
-        crk_upload();
-//        let crk_lable_ins = crk_label();
-//        L2.text="2"
-//        L1.text = "Befor"
-        Download_crk(stUrl: "https://minkara.carview.co.jp",
+        nowTimeLabel2.text = Utility.nowTimeGet2()
+        Download_crk(stUrl: "http://153.156.43.33/Android/pass_list.csv",
             fn: { data in
                 DispatchQueue.main.async {
 //                    取得した文字列データをUITextViewに収納
-         //           self.T1.text = data
+                    self.T1.text = data
                 }
         })
     }
-    
     @IBAction func Push(_ sender: Any) {
-        
         let  str:String = self.readFromFile()
         let arr:[String] = str.components(separatedBy: ",")
-        
         let tw = "10" + "," + arr[2] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + arr[4] + "," + Utility.nowTimeGet5()
         
         T1.text=UserDefaults.standard.string( forKey: "keyOne")
@@ -64,6 +48,8 @@ class ViewController: UIViewController {
         } catch {
             print("Error: \(error)")
         }
+        //出勤報告をサーバーに追加書する
+        crk_upload();
     }
     
     func readFromFile() -> String {
