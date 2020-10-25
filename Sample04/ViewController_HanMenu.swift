@@ -81,23 +81,12 @@ class ViewController_HanMenu: UIViewController {
         })
 
     }
-
     // メニュー外をタップした場合に非表示にする
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         for touch in touches {
             if touch.view?.tag == 1 {
-                //Start
-          
-
-                    
-                UserDefaults.standard.set(Ans1.text, forKey: "keyOne")
-     
-
-   
-                
-            //    nextView.T2.text? = "aa"
-//                print(nextView.nowTimeLabel!)
+                UserDefaults.standard.set(Ans1.text, forKey: "HanMenu1")
                 UIView.animate(
                     withDuration: 0.2,
                     delay: 0,

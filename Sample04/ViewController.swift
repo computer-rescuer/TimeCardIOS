@@ -30,18 +30,14 @@ class ViewController: UIViewController {
         let  str:String = self.readFromFile()
         let arr:[String] = str.components(separatedBy: ",")
         let tw = "10" + "," + arr[2] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + arr[4] + "," + Utility.nowTimeGet5()
-        
-        T1.text=UserDefaults.standard.string( forKey: "keyOne")
-        
-        
+ //HanMenuで書き換えた出勤場所を上書きする
+        T1.text=UserDefaults.standard.string( forKey: "HanMenu1")
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             fatalError("フォルダURL取得エラー")
         }
-        
         /// ②対象のファイルURL取得
         let fileURL = dirURL.appendingPathComponent("main.txt")
-
         /// ③ファイルの書き込み
         do {
             try tw.write(to: fileURL, atomically: true, encoding: .utf8)
