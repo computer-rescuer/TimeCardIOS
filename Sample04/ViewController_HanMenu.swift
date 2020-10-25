@@ -13,7 +13,6 @@ class ViewController_HanMenu: UIViewController {
     @IBOutlet weak var B2: UIButton!
     @IBOutlet weak var B3: UIButton!
     @IBOutlet weak var V1: UIView!
-    var Ans2: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

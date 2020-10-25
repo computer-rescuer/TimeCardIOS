@@ -15,7 +15,7 @@ class ViewController_Setting:UIViewController{
     @IBOutlet weak var Area1: UITextField!
     @IBOutlet weak var Area2: UITextField!
     @IBOutlet weak var Area3: UITextField!
-    
+    @IBOutlet weak var Host: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         let  str:String = self.readFromFile()
@@ -29,10 +29,13 @@ class ViewController_Setting:UIViewController{
             Area1.text=arr[4]
             Area2.text=arr[5]
             Area3.text=arr[6]
+ //          Host.text=arr[7]
         }
+        //
+        Host.text=UserDefaults.standard.string( forKey: "Setting1")
     }
     @IBAction func Save(_ sender: Any) {
-        
+        UserDefaults.standard.set(Host.text, forKey: "Setting1")
         let tf1  = UserID.text!
         let tf2  = Password.text!
         let tf3  = Name.text!
@@ -40,7 +43,8 @@ class ViewController_Setting:UIViewController{
         let tf5  = Area1.text!
         let tf6  = Area2.text!
         let tf7  = Area3.text!
-        
+ //       let tf8  = Host.text!
+
         let alltf = tf1 + "," + tf2 + "," + tf3 + "," + tf4 + "," + tf5 + "," + tf6 + "," + tf7
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
