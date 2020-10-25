@@ -15,10 +15,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var T2: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 携帯のメモリから取得し、IPを生成する
+        let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
+ //       let WK_URL_NAME = "http://IP/Android/pass_list.csv"
+        let WK_URL_NAME = "http://IP/Android/pass_check.csv"
+   
+        let WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
         // 現在時刻を取得し、表示する
         nowTimeLabel.text = Utility.nowTimeGet()
         nowTimeLabel2.text = Utility.nowTimeGet2()
-        Download_crk(stUrl: "http://153.156.43.33/Android/pass_list.csv",
+        Download_crk(stUrl: WK_URL_NAME_R,
             fn: { data in
                 DispatchQueue.main.async {
 //                    取得した文字列データをUITextViewに収納
@@ -34,10 +40,10 @@ class ViewController: UIViewController {
         let arr:[String] = str.components(separatedBy: ",")
  //HanMenuで書き換えた出勤場所を上書きする
         T2.text=UserDefaults.standard.string( forKey: "HanMenu1")
-        let WK_T2_NUM = Int(T2.text!)!
         
         if T2.text != "" {
-             WK_PLACE = arr[WK_T2_NUM]
+            let WK_T2_NUM = Int(T2.text!)!
+            WK_PLACE = arr[WK_T2_NUM]
     }else{
             WK_PLACE = arr[4]
     }
