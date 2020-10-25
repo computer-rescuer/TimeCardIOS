@@ -10,32 +10,23 @@ func crk_upload() {
     let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
     let url = NSURL(fileURLWithPath: path)
     if let pathComponent = url.appendingPathComponent(WK_FILE_NAME){
-    let filePath = pathComponent.path
-    let fileManager = FileManager.default
-    if fileManager.fileExists(atPath: filePath) {
-        print("FILE AVAILABLE")
+        let filePath = pathComponent.path
+        let fileManager = FileManager.default
+        if fileManager.fileExists(atPath: filePath) {
+            print("FILE AVAILABLE")
+        }
+        /// ③ファイルの読み込み
+        let fileURL = dirURL.appendingPathComponent(WK_FILE_NAME)
+        guard let fileContents = try? String(contentsOf: fileURL)
+    else
+        {fatalError("ファイル読み込みエラー")
     }
-    /// ③ファイルの読み込み
-    let fileURL = dirURL.appendingPathComponent(WK_FILE_NAME)
-    guard let fileContents = try? String(contentsOf: fileURL)
-    else {fatalError("ファイル読み込みエラー")
-    }
-    let arr:[String] = fileContents.components(separatedBy: ",")
- /*
-    if str != ""{
-        UserID.text=arr[0]
-        Password.text=arr[1]
-        Name.text=arr[2]
-        Syain_cd.text=arr[3]
-        Area1.text=arr[4]
-        Area2.text=arr[5]
-        Area3.text=arr[6]
-       Host.text=arr[7]
-    }
-   */
-        let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
+    let Send_msg = "word="+fileContents
+//    let arr:[String] = fileContents.components(separatedBy: ",")
+//start
+    print("Start Host Interface")
+    let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
     //start
-    print("Start")
     let WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
     print(WK_URL_NAME_R)
     //created NSURL
@@ -45,7 +36,7 @@ func crk_upload() {
     //setting the method to post
     request.httpMethod = "POST"
     //テキストフィールドからキーと値を連結してpostパラメータを生成する
-    let postParameters = "word=sakamoto FUNC33"
+    let postParameters = Send_msg
     //ボディをリクエストするためのパラメータを追加する
     request.httpBody = postParameters.data(using: String.Encoding.utf8)
     //投稿要求を送信するタスクを作成する

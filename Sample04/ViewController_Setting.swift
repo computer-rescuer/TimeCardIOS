@@ -33,9 +33,15 @@ class ViewController_Setting:UIViewController{
         }
         //
         Host.text=UserDefaults.standard.string( forKey: "Setting1")
+        print(UserDefaults.standard.string( forKey: "Setting1"))
     }
     @IBAction func Save(_ sender: Any) {
-        UserDefaults.standard.set(Host.text, forKey: "Setting1")
+        let WK_HOST = Host.text!
+        print(WK_HOST)
+
+        UserDefaults.standard.set(WK_HOST, forKey: "Setting1")
+        print(Host.text!)
+        print(UserDefaults.standard.string( forKey: "Setting1"))
         let tf1  = UserID.text!
         let tf2  = Password.text!
         let tf3  = Name.text!

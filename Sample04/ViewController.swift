@@ -25,13 +25,24 @@ class ViewController: UIViewController {
                     self.T1.text = data
                 }
         })
+        //HanMenuが呼び出される目にクリア
+        UserDefaults.standard.set("", forKey: "HanMenu1")
     }
     @IBAction func Push(_ sender: Any) {
+        var WK_PLACE = ""
         let  str:String = self.readFromFile()
         let arr:[String] = str.components(separatedBy: ",")
-        let tw = "10" + "," + arr[2] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + arr[4] + "," + Utility.nowTimeGet5()
  //HanMenuで書き換えた出勤場所を上書きする
-        T1.text=UserDefaults.standard.string( forKey: "HanMenu1")
+        T2.text=UserDefaults.standard.string( forKey: "HanMenu1")
+        let WK_T2_NUM = Int(T2.text!)!
+        
+        if T2.text != "" {
+             WK_PLACE = arr[WK_T2_NUM]
+    }else{
+            WK_PLACE = arr[4]
+    }
+    let tw = "10" + "," + arr[2] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + WK_PLACE + "," + Utility.nowTimeGet5()
+
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             fatalError("フォルダURL取得エラー")
