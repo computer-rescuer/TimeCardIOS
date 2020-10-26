@@ -16,8 +16,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 携帯のメモリから取得し、IPを生成する
-        let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
- //       let WK_URL_NAME = "http://IP/Android/pass_list.csv"
+        //let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
+        let WK_IP: String = "WORKIP"
+        //       let WK_URL_NAME = "http://IP/Android/pass_list.csv"
         let WK_URL_NAME = "http://IP/Android/pass_check.csv"
    
         let WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
