@@ -41,8 +41,8 @@ class ViewController: UIViewController {
             if (WK_file == "OK" ){
                 // 携帯のメモリから取得し、IPを生成する
                 let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
-//              let WK_URL_NAME = "http://IP/Android/pass_list.csv"
-                let WK_URL_NAME = "http://IP/Android/pass_check.csv"
+                let WK_URL_NAME = "http://IP/Android/pass_list.csv"
+//              let WK_URL_NAME = "http://IP/Android/pass_check.csv"
    
                 let WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
         
@@ -68,8 +68,8 @@ class ViewController: UIViewController {
                 print (arr[4])
             }
         
-            //3秒ごとに繰り返す、repeat every 1 seconds
-            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+            //3秒ごとに繰り返す、repeat every 1 minutes
+            timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
                 timer.fire()
             }
             override func viewWillDisappear(_ animated: Bool) {
