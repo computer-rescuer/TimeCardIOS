@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var AreaLabel: UILabel!
     @IBOutlet weak var T2: UITextField!
     var arr = [String]()
+    var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,17 @@ class ViewController: UIViewController {
                 print (arr[3])
                 print (arr[4])
             }
+        
+            //3秒ごとに繰り返す、repeat every 1 seconds
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+                timer.fire()
+            }
+            override func viewWillDisappear(_ animated: Bool) {
+                super.viewWillDisappear(true)
+                timer.invalidate()
+            }
+            @objc func update(tm: Timer) {
+            //この関数を繰り返す、repeat this function        
             // 現在時刻を取得し、表示する
             nowTimeLabel.text = Utility.nowTimeGet()
             nowTimeLabel2.text = Utility.nowTimeGet2()
@@ -83,7 +95,10 @@ class ViewController: UIViewController {
             WK_PLACE = arr[4]
            }
         
-
+        //隠し出勤場所ラベル内を上書き
+        AreaLabel.text = WK_PLACE
+        
+        //書き込み用の文字列の作成
         let tw = "10" + "," + arr[2] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + WK_PLACE + "," + Utility.nowTimeGet5()
 
         /// ①DocumentsフォルダURL取得
