@@ -8,8 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var  B1: UIButton!
-    @IBOutlet weak var T1: UITextView!
+    @IBOutlet weak var B1: UIButton!
+    @IBOutlet weak var TextHN: UITextView!
     @IBOutlet weak var nowTimeLabel: UILabel!
     @IBOutlet weak var nowTimeLabel2: UILabel!
     @IBOutlet weak var NameLabel: UILabel!
@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var Syain_cdLabel: UILabel!
     @IBOutlet weak var AreaLabel: UILabel!
     @IBOutlet weak var T2: UITextField!
+    var arr = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
             fn: { data in
                 DispatchQueue.main.async {
 //                    取得した文字列データをUITextViewに収納
-                    self.T1.text = data
+                    self.TextHN.text = data
                 }
         })
    //     //HanMenuが呼び出される目にクリア
@@ -45,18 +46,18 @@ class ViewController: UIViewController {
         
         //端末内テキストから名前を取得し、表示する
         let  str:String = self.readFromFile()
-        let arr:[String] = str.components(separatedBy: ",")
-                
-        UserIDLabel.text = arr[0]
-        PasswordLabel.text = arr[1]
-        NameLabel.text = arr[2]
-        Syain_cdLabel.text = arr[3]
+        let arr2:[String] = str.components(separatedBy: ",")
+                arr.append(contentsOf: arr2)
+                UserIDLabel.text = arr[0]
+                PasswordLabel.text = arr[1]
+                NameLabel.text = arr[2]
+                Syain_cdLabel.text = arr[3]
+                print (arr[3])
+                print (arr[4])
         
     }
     
     @IBAction func Push(_ sender: Any) {
-        let UserID = UserIDLabel.text!
-        let Area = AreaLabel.text!
         var WK_PLACE = ""
         //HanMenuで書き換えた出勤場所を上書きする
                T2.text=UserDefaults.standard.string( forKey: "HanMenu1")
@@ -65,11 +66,11 @@ class ViewController: UIViewController {
                    let WK_T2_NUM = Int(T2.text!)!
                    WK_PLACE = arr[WK_T2_NUM]
            }else{
-                   WK_PLACE = arr[4]
+            WK_PLACE = arr[4]
            }
         
 
-        let tw = "10" + "," + UserID + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + Area + "," + Utility.nowTimeGet5()
+        let tw = "10" + "," + arr[2] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + WK_PLACE + "," + Utility.nowTimeGet5()
 
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {

@@ -8,11 +8,11 @@
 import UIKit
 
 class ViewController_HanMenu: UIViewController {
-    @IBOutlet weak var V1: UIView!
     @IBOutlet weak var B1: UIButton!
     @IBOutlet weak var B2: UIButton!
     @IBOutlet weak var B3: UIButton!
     @IBOutlet weak var Ans1: UITextField!
+    @IBOutlet weak var V1: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +28,15 @@ class ViewController_HanMenu: UIViewController {
     @IBAction func B1_Click(_ sender: Any) {
         Ans1.text="4"
     }
+    
     @IBAction func B2_Click(_ sender: Any) {
         Ans1.text="5"
     }
+    
     @IBAction func B3_Click(_ sender: Any) {
         Ans1.text="6"
     }
+  
     func readFromFile() -> String {
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
