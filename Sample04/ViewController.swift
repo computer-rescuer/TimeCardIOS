@@ -22,40 +22,54 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 携帯のメモリから取得し、IPを生成する
-                 let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
- //       let WK_URL_NAME = "http://IP/Android/pass_list.csv"
-        let WK_URL_NAME = "http://IP/Android/pass_check.csv"
-   
-        let WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
-        
-        // 現在時刻を取得し、表示する
-        nowTimeLabel.text = Utility.nowTimeGet()
-        nowTimeLabel2.text = Utility.nowTimeGet2()
-        
-        Download_crk(stUrl: WK_URL_NAME_R,
-            fn: { data in
-                DispatchQueue.main.async {
-//                    取得した文字列データをUITextViewに収納
-                    self.TextHN.text = data
+        ///setting.txtが存在しない場合はスマホのメモリを見にいかない
+            guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+            else {
+                fatalError("フォルダURL取得エラー")
+            }
+            var     WK_file:String = "NG"
+            let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
+            let url = NSURL(fileURLWithPath: path)
+            if let pathComponent = url.appendingPathComponent("setting.txt"){
+                let filePath = pathComponent.path
+                let fileManager = FileManager.default
+                if fileManager.fileExists(atPath: filePath) {
+                    WK_file = "OK"
                 }
-        })
-   //     //HanMenuが呼び出される目にクリア
-        UserDefaults.standard.set("", forKey: "HanMenu1")
+            }
+            if (WK_file == "OK" ){
+                // 携帯のメモリから取得し、IPを生成する
+                let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
+//              let WK_URL_NAME = "http://IP/Android/pass_list.csv"
+                let WK_URL_NAME = "http://IP/Android/pass_check.csv"
+   
+                let WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
         
-        //端末内テキストから名前を取得し、表示する
-        let  str:String = self.readFromFile()
-        let arr2:[String] = str.components(separatedBy: ",")
+                Download_crk(stUrl: WK_URL_NAME_R,
+                fn: { data in
+                    DispatchQueue.main.async {
+                          //取得した文字列データをUITextViewに収納
+                        self.TextHN.text = data
+                    }
+                })
+                //HanMenuが呼び出される前にクリア
+                UserDefaults.standard.set("", forKey: "HanMenu1")
+                //端末内テキストから名前を取得し、表示する
+                let  str:String = self.readFromFile()
+                let arr2:[String] = str.components(separatedBy: ",")
                 arr.append(contentsOf: arr2)
                 UserIDLabel.text = arr[0]
                 PasswordLabel.text = arr[1]
+                
                 NameLabel.text = arr[2]
                 Syain_cdLabel.text = arr[3]
                 print (arr[3])
                 print (arr[4])
-        
-    }
+            }
+            // 現在時刻を取得し、表示する
+            nowTimeLabel.text = Utility.nowTimeGet()
+            nowTimeLabel2.text = Utility.nowTimeGet2()
+        }
     
     @IBAction func Push(_ sender: Any) {
         var WK_PLACE = ""
