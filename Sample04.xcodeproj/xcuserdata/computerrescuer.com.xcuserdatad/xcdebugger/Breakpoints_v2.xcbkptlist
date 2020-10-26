@@ -36,44 +36,44 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "51C95656-18F3-4F9C-8CEE-578C77075333 - 52928e5416e19dd2"
+                  uuid = "51C95656-18F3-4F9C-8CEE-578C77075333 - ca215f5dff1d0837"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Sample04.ViewController.L2.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  symbolName = "Sample04.ViewController.nowTimeLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
                   moduleName = "Sample04"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/computerrescuer.com/Desktop/OK/Sample04/ViewController.swift"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
                   offsetFromSymbolStart = "88">
                </Location>
                <Location
-                  uuid = "51C95656-18F3-4F9C-8CEE-578C77075333 - c570a51dff0bf92e"
+                  uuid = "51C95656-18F3-4F9C-8CEE-578C77075333 - aac2205f0a2f4c2b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Sample04.ViewController.L2.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  symbolName = "Sample04.ViewController.nowTimeLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
                   moduleName = "Sample04"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/computerrescuer.com/Desktop/OK/Sample04/ViewController.swift"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
                   offsetFromSymbolStart = "155">
                </Location>
                <Location
-                  uuid = "51C95656-18F3-4F9C-8CEE-578C77075333 - 628b966e02aff62f"
+                  uuid = "51C95656-18F3-4F9C-8CEE-578C77075333 - 6de5962ee78d698f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Sample04.ViewController.L2.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  symbolName = "Sample04.ViewController.nowTimeLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
                   moduleName = "Sample04"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/computerrescuer.com/Desktop/OK/Sample04/ViewController.swift"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -81,49 +81,49 @@
                   offsetFromSymbolStart = "59">
                </Location>
                <Location
-                  uuid = "51C95656-18F3-4F9C-8CEE-578C77075333 - 7f92e471cb85681"
+                  uuid = "51C95656-18F3-4F9C-8CEE-578C77075333 - 316bb0336bd9df5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Sample04.ViewController.L2.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  symbolName = "Sample04.ViewController.nowTimeLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
                   moduleName = "Sample04"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/computerrescuer.com/Desktop/OK/Sample04/ViewController.swift"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
                   offsetFromSymbolStart = "64">
                </Location>
                <Location
-                  uuid = "51C95656-18F3-4F9C-8CEE-578C77075333 - 2b0e1837c0f1ce3"
+                  uuid = "51C95656-18F3-4F9C-8CEE-578C77075333 - 18b0943a377295b7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Sample04.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Sample04.ViewController"
                   moduleName = "Sample04"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/computerrescuer.com/Desktop/OK/Sample04/ViewController.swift"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "485">
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "669">
                </Location>
                <Location
-                  uuid = "51C95656-18F3-4F9C-8CEE-578C77075333 - a2151e1649089915"
+                  uuid = "51C95656-18F3-4F9C-8CEE-578C77075333 - b8156baf02751041"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Sample04.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Sample04.ViewController&gt;"
                   moduleName = "Sample04"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/computerrescuer.com/Desktop/OK/Sample04/ViewController.swift"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "426">
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "610">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -142,6 +142,98 @@
             endingLineNumber = "20"
             landmarkName = "ViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "DAEB504C-9605-4C6F-AE8C-187E980B44D6 - a3ebf0e271b97348"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.T2.getter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "DAEB504C-9605-4C6F-AE8C-187E980B44D6 - 98b783cdb54ae4dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.T2.setter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "DAEB504C-9605-4C6F-AE8C-187E980B44D6 - baea69d830d6fbc9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.T2.modify : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  uuid = "DAEB504C-9605-4C6F-AE8C-187E980B44D6 - 4dbb2c62f5c74d9a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.T2.modify : Swift.Optional&lt;__C.UITextField&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "DAEB504C-9605-4C6F-AE8C-187E980B44D6 - 18b0943a37728a9e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Sample04.ViewController"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "1504">
+               </Location>
+               <Location
+                  uuid = "DAEB504C-9605-4C6F-AE8C-187E980B44D6 - b8156baf02750f68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Sample04.ViewController&gt;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "1445">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -174,38 +266,6 @@
             endingLineNumber = "16"
             landmarkName = "crk_upload()"
             landmarkType = "9">
-            <Locations>
-               <Location
-                  uuid = "3B0DB51B-916A-4A01-87EC-C8E2448BD9A3 - 4cf46fb12a0cbe66"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Sample04.crk_upload() -&gt; ()"
-                  moduleName = "Sample04"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/computerrescuer.com/Desktop/OK/Sample04/Upload_crk.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "377">
-               </Location>
-               <Location
-                  uuid = "3B0DB51B-916A-4A01-87EC-C8E2448BD9A3 - 266774ba2c45da11"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Sample04.crk_upload() -&gt; ()"
-                  moduleName = "Sample04"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/computerrescuer.com/Desktop/OK/Sample04/Upload_crk.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "244">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -270,6 +330,98 @@
             endingLineNumber = "21"
             landmarkName = "ViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "BA5E18D0-DF8D-4D03-A771-676112E57013 - c8e994500b620a0a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.arr.getter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "122">
+               </Location>
+               <Location
+                  uuid = "BA5E18D0-DF8D-4D03-A771-676112E57013 - 1a5c16816c2087fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.arr.setter : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "BA5E18D0-DF8D-4D03-A771-676112E57013 - 2003abd4f5797ab0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.arr.modify : Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "BA5E18D0-DF8D-4D03-A771-676112E57013 - 8cd2e39da840cee5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.arr.modify : Swift.Array&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "BA5E18D0-DF8D-4D03-A771-676112E57013 - 18b0943a37728abf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Sample04.ViewController"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "1626">
+               </Location>
+               <Location
+                  uuid = "BA5E18D0-DF8D-4D03-A771-676112E57013 - b8156baf02750f49"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Sample04.ViewController&gt;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "1567">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -302,6 +454,98 @@
             endingLineNumber = "22"
             landmarkName = "ViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "539C1459-CD5F-4CB2-80C4-E461C472A238 - c5e5d587d27bbdb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.timer.getter : Swift.Optional&lt;__C.NSTimer&gt;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "539C1459-CD5F-4CB2-80C4-E461C472A238 - 39c52959f5a36f1f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.timer.setter : Swift.Optional&lt;__C.NSTimer&gt;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "539C1459-CD5F-4CB2-80C4-E461C472A238 - 9865b07f5b9f630a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.timer.modify : Swift.Optional&lt;__C.NSTimer&gt;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "539C1459-CD5F-4CB2-80C4-E461C472A238 - 54ba690fe54ce0f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.timer.modify : Swift.Optional&lt;__C.NSTimer&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "539C1459-CD5F-4CB2-80C4-E461C472A238 - 18b0943a37728adc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Sample04.ViewController"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "1751">
+               </Location>
+               <Location
+                  uuid = "539C1459-CD5F-4CB2-80C4-E461C472A238 - b8156baf02750f2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Sample04.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Sample04.ViewController&gt;"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "1692">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -414,6 +658,38 @@
             endingLineNumber = "51"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5F96E681-1948-494C-9B56-E80FD4123A68 - a6efe97c28587cb6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in Sample04.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "178">
+               </Location>
+               <Location
+                  uuid = "5F96E681-1948-494C-9B56-E80FD4123A68 - ff7a58561d20754a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.String) -&gt; () in Sample04.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Sample04"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/computerrescuer.com/Desktop/TimeCardAndroid-android-h-numata/TimeCardIOS/Sample04/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
