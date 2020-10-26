@@ -105,7 +105,6 @@
 		44048869253A78AB002516A1 /* Sample04 */ = {
 			isa = PBXGroup;
 			children = (
-				447E9847253B6FAB00DB1983 /* Download_crk.swift */,
 				4404886A253A78AB002516A1 /* AppDelegate.swift */,
 				4404886C253A78AB002516A1 /* SceneDelegate.swift */,
 				4404886E253A78AB002516A1 /* ViewController.swift */,
@@ -114,6 +113,7 @@
 				44048875253A78AC002516A1 /* LaunchScreen.storyboard */,
 				44048878253A78AC002516A1 /* Info.plist */,
 				440488A0253ACA57002516A1 /* Upload_crk.swift */,
+				447E9847253B6FAB00DB1983 /* Download_crk.swift */,
 				4452FE19253AF7D80080D819 /* ViewController_Work.swift */,
 			);
 			path = Sample04;

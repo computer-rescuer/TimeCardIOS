@@ -17,14 +17,31 @@ class ViewController: UIViewController {
     @IBOutlet weak var PasswordLabel: UILabel!
     @IBOutlet weak var Syain_cdLabel: UILabel!
     @IBOutlet weak var AreaLabel: UILabel!
+    @IBOutlet weak var T2: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 携帯のメモリから取得し、IPを生成する
+                 let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
+ //       let WK_URL_NAME = "http://IP/Android/pass_list.csv"
+        let WK_URL_NAME = "http://IP/Android/pass_check.csv"
+   
+        let WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
         
         // 現在時刻を取得し、表示する
         nowTimeLabel.text = Utility.nowTimeGet()
         nowTimeLabel2.text = Utility.nowTimeGet2()
+        
+        Download_crk(stUrl: WK_URL_NAME_R,
+            fn: { data in
+                DispatchQueue.main.async {
+//                    取得した文字列データをUITextViewに収納
+                    self.T1.text = data
+                }
+        })
+   //     //HanMenuが呼び出される目にクリア
+        UserDefaults.standard.set("", forKey: "HanMenu1")
         
         //端末内テキストから名前を取得し、表示する
         let  str:String = self.readFromFile()
@@ -35,24 +52,23 @@ class ViewController: UIViewController {
         NameLabel.text = arr[2]
         Syain_cdLabel.text = arr[3]
         
-        // Do any additional setup after loading the view.
-        crk_upload();
-//        let crk_lable_ins = crk_label();
-//        L2.text="2"
-//        L1.text = "Befor"
-        Download_crk(stUrl: "https://minkara.carview.co.jp",
-            fn: { data in
-                DispatchQueue.main.async {
-//                    取得した文字列データをUITextViewに収納
-                    self.T1.text = data
-                }
-        })
     }
     
     @IBAction func Push(_ sender: Any) {
-        
         let UserID = UserIDLabel.text!
         let Area = AreaLabel.text!
+        var WK_PLACE = ""
+        //HanMenuで書き換えた出勤場所を上書きする
+               T2.text=UserDefaults.standard.string( forKey: "HanMenu1")
+               
+               if T2.text != "" {
+                   let WK_T2_NUM = Int(T2.text!)!
+                   WK_PLACE = arr[WK_T2_NUM]
+           }else{
+                   WK_PLACE = arr[4]
+           }
+        
+
         let tw = "10" + "," + UserID + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + Area + "," + Utility.nowTimeGet5()
 
         /// ①DocumentsフォルダURL取得
@@ -82,6 +98,9 @@ class ViewController: UIViewController {
         dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         //実際に表示させる
         self.present(dialog, animated: true, completion: nil)
+        //出勤報告をサーバーに追加書する
+        crk_upload();
+
     }
     
     func readFromFile() -> String {
