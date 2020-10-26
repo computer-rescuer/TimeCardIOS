@@ -66,7 +66,7 @@ class ViewController_Work: UIViewController , UIPickerViewDelegate,
             fatalError("フォルダURL取得エラー")
         }
         /// ②対象のファイルURL取得
-        let fileURL = dirURL.appendingPathComponent("output1.txt")
+        let fileURL = dirURL.appendingPathComponent("setting.txt")
  
         /// ③ファイルの読み込み
         guard let fileContents = try? String(contentsOf: fileURL)

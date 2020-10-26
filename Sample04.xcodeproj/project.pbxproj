@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084C76C12542B7EE00BA4CEB /* ViewController_rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C76C02542B7EE00BA4CEB /* ViewController_rest.swift */; };
 		08A6C497253FD7DB00E08B55 /* ViewController_Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6C496253FD7DB00E08B55 /* ViewController_Setting.swift */; };
 		08A6C4A1253FEF0E00E08B55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44048870253A78AB002516A1 /* Main.storyboard */; };
 		08A6C4A625401FBD00E08B55 /* AttendButton_Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6C4A525401FBD00E08B55 /* AttendButton_Custom.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		084C76C02542B7EE00BA4CEB /* ViewController_rest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_rest.swift; sourceTree = "<group>"; };
 		08A6C496253FD7DB00E08B55 /* ViewController_Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Setting.swift; sourceTree = "<group>"; };
 		08A6C4A525401FBD00E08B55 /* AttendButton_Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendButton_Custom.swift; sourceTree = "<group>"; };
 		08BB6B9125415320000EF734 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				440488A0253ACA57002516A1 /* Upload_crk.swift */,
 				08BB6B9125415320000EF734 /* Utility.swift */,
 				4404886E253A78AB002516A1 /* ViewController.swift */,
+				084C76C02542B7EE00BA4CEB /* ViewController_rest.swift */,
 				4452FE19253AF7D80080D819 /* ViewController_Work.swift */,
 				08A6C496253FD7DB00E08B55 /* ViewController_Setting.swift */,
 			);
@@ -281,6 +284,7 @@
 				08A6C497253FD7DB00E08B55 /* ViewController_Setting.swift in Sources */,
 				4452FE1A253AF7D80080D819 /* ViewController_Work.swift in Sources */,
 				4404886D253A78AB002516A1 /* SceneDelegate.swift in Sources */,
+				084C76C12542B7EE00BA4CEB /* ViewController_rest.swift in Sources */,
 				08A6C4A625401FBD00E08B55 /* AttendButton_Custom.swift in Sources */,
 				447E9848253B6FAB00DB1983 /* Download_crk.swift in Sources */,
 				08BB6B9225415320000EF734 /* Utility.swift in Sources */,
