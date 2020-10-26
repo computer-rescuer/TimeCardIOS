@@ -13,28 +13,25 @@ class ViewController_HanMenu: UIViewController {
     @IBOutlet weak var B2: UIButton!
     @IBOutlet weak var B3: UIButton!
     @IBOutlet weak var V1: UIView!
-    var Ans2: String = "１"
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-    
         let  str:String = self.readFromFile()
         let arr:[String] = str.components(separatedBy: ",")
-        
         if str != ""{
             B1.setTitle(arr[4], for: UIControl.State.normal)
             B2.setTitle(arr[5], for: UIControl.State.normal)
             B3.setTitle(arr[6], for: UIControl.State.normal)
         }
-        
-     
-        //end
-        
     }
-    
     @IBAction func B1_Click(_ sender: Any) {
         Ans1.text="4"
+    }
+    @IBAction func B2_Click(_ sender: Any) {
+        Ans1.text="5"
+    }
+    @IBAction func B3_Click(_ sender: Any) {
+        Ans1.text="6"
     }
     func readFromFile() -> String {
         /// ①DocumentsフォルダURL取得
@@ -83,23 +80,12 @@ class ViewController_HanMenu: UIViewController {
         })
 
     }
-
     // メニュー外をタップした場合に非表示にする
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         for touch in touches {
             if touch.view?.tag == 1 {
-                //Start
-          
-
-                    
-                UserDefaults.standard.set(Ans1.text, forKey: "keyOne")
-     
-
-   
-                
-            //    nextView.T2.text? = "aa"
-//                print(nextView.nowTimeLabel!)
+                UserDefaults.standard.set(Ans1.text, forKey: "HanMenu1")
                 UIView.animate(
                     withDuration: 0.2,
                     delay: 0,
