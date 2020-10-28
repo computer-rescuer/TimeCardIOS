@@ -131,6 +131,10 @@ class ViewController: UIViewController {
         //出勤報告をサーバーに追加書する
         crk_upload();
 
+        //画面のリロード
+        loadView()
+        viewDidLoad()
+
     }
     
     func readFromFile() -> String {
