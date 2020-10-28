@@ -18,11 +18,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var Syain_cdLabel: UILabel!
     @IBOutlet weak var AreaLabel: UILabel!
     @IBOutlet weak var T2: UITextField!
+    @IBOutlet weak var ScrollHN: UIScrollView!
+    @IBOutlet weak var LabelHN: UILabel!
     var arr = [String]()
     var timer: Timer!
+    var WK_URL_NAME_R: String=""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //ボタンの連続押下の禁止
+        UIButton.appearance().isExclusiveTouch = true
+        
         ///setting.txtが存在しない場合はスマホのメモリを見にいかない
             guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
             else {
@@ -44,13 +51,14 @@ class ViewController: UIViewController {
                 let WK_URL_NAME = "http://IP/Android/pass_list.csv"
 //              let WK_URL_NAME = "http://IP/Android/pass_check.csv"
    
-                let WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
+                WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
         
                 Download_crk(stUrl: WK_URL_NAME_R,
                 fn: { data in
                     DispatchQueue.main.async {
                           //取得した文字列データをUITextViewに収納
-                        self.TextHN.text = data
+                        self.LabelHN.text = data
+        
                     }
                 })
                 //HanMenuが呼び出される前にクリア
@@ -64,6 +72,7 @@ class ViewController: UIViewController {
                 
                 NameLabel.text = arr[2]
                 Syain_cdLabel.text = arr[3]
+                AreaLabel.text = arr[4]
                 print (arr[3])
                 print (arr[4])
             }
@@ -89,17 +98,17 @@ class ViewController: UIViewController {
                T2.text=UserDefaults.standard.string( forKey: "HanMenu1")
                
                if T2.text != "" {
-                   let WK_T2_NUM = Int(T2.text!)!
-                   WK_PLACE = arr[WK_T2_NUM]
+                    let WK_T2_NUM = Int(T2.text!)!
+                    WK_PLACE = arr[WK_T2_NUM]
+                
+                AreaLabel.text = arr[WK_T2_NUM]
            }else{
             WK_PLACE = arr[4]
+            
            }
         
-        //隠し出勤場所ラベル内を上書き
-        AreaLabel.text = WK_PLACE
-        
         //書き込み用の文字列の作成
-        let tw = "10" + "," + arr[2] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + WK_PLACE + "," + Utility.nowTimeGet5()
+        let tw = "10" + "," + arr[3] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + WK_PLACE + "," + Utility.nowTimeGet5()
 
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
@@ -131,12 +140,38 @@ class ViewController: UIViewController {
         //出勤報告をサーバーに追加書する
         crk_upload();
 
-        //画面のリロード
-        loadView()
-        viewDidLoad()
-
+        //出勤状況エリアに格納
+        Download_crk(stUrl: WK_URL_NAME_R,
+        fn: { data in
+            DispatchQueue.main.async {
+                  //取得した文字列データをUITextViewに収納
+                self.LabelHN.text = data
+            }
+        })
     }
-    
+
+        
+    @IBAction func Reload(_ sender: Any) {
+    Download_crk(stUrl: WK_URL_NAME_R,
+        fn: { data in
+            DispatchQueue.main.async {
+                  //取得した文字列データをUITextViewに収納
+                self.LabelHN.text = data
+            }
+        })
+        var WK_PLACE = ""
+        //HanMenuで書き換えた出勤場所を上書きする
+        T2.text=UserDefaults.standard.string( forKey: "HanMenu1")
+               
+        if T2.text != "" {
+        let WK_T2_NUM = Int(T2.text!)!
+        WK_PLACE = arr[WK_T2_NUM]
+                
+        AreaLabel.text = arr[WK_T2_NUM]
+        }else{
+        WK_PLACE = arr[4]
+        }
+    }
     func readFromFile() -> String {
                 /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
@@ -164,4 +199,5 @@ class ViewController: UIViewController {
         }
         return fileContents
     }
+    
 }

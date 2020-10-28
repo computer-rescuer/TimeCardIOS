@@ -68,7 +68,7 @@ class ViewController_Setting:UIViewController{
         }
         /// ④完了メッセージの表示
         //アラートのタイトル
-        let dialog = UIAlertController(title: "ユーザ情報を保存しました。", message: "", preferredStyle: .alert)
+        let dialog = UIAlertController(title: "入力内容を保存しました。", message: "", preferredStyle: .alert)
         //ボタンのタイトル
         dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         //実際に表示させる
@@ -109,7 +109,7 @@ class ViewController_Setting:UIViewController{
         }
         /// ④完了メッセージの表示
         //アラートのタイトル
-        let dialog = UIAlertController(title: "ユーザ情報をクリアしました。", message: "", preferredStyle: .alert)
+        let dialog = UIAlertController(title: "入力内容をクリアしました。", message: "", preferredStyle: .alert)
         //ボタンのタイトル
         dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         //実際に表示させる
