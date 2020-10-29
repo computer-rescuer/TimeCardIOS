@@ -35,6 +35,7 @@ class ViewController_HanMenu: UIViewController {
     
     @IBAction func B3_Click(_ sender: Any) {
         Ans1.text="6"
+
     }
   
     func readFromFile() -> String {

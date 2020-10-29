@@ -77,7 +77,7 @@ class ViewController: UIViewController {
                 print (arr[4])
             }
         
-            //3秒ごとに繰り返す、repeat every 1 minutes
+            //60秒ごとに繰り返す、repeat every 1 minutes
             timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
                 timer.fire()
             }
