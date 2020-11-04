@@ -24,7 +24,7 @@ class ViewController_Setting:UIViewController{
         let rst:String
         
         if str != ""{
-            rst = arr[3] + "　" + arr[2] + "　" + arr[4]
+            rst = arr[3] + "　" + arr[2] + "" + arr[4]
             
             UserID.text=arr[0]
             Password.text=arr[1]
