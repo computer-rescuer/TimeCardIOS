@@ -16,12 +16,16 @@ class ViewController_Setting:UIViewController{
     @IBOutlet weak var Area2: UITextField!
     @IBOutlet weak var Area3: UITextField!
     @IBOutlet weak var Host: UITextField!
+    @IBOutlet weak var Result: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         let  str:String = self.readFromFile()
         let arr:[String] = str.components(separatedBy: ",")
+        let rst:String
         
         if str != ""{
+            rst = arr[3] + "　" + arr[2] + "　" + arr[4]
+            
             UserID.text=arr[0]
             Password.text=arr[1]
             Name.text=arr[2]
@@ -30,6 +34,9 @@ class ViewController_Setting:UIViewController{
             Area2.text=arr[5]
             Area3.text=arr[6]
 //          Host.text=arr[7]
+            Result.text=rst
+        
+            
         }
         Host.text=UserDefaults.standard.string( forKey: "Setting1")
         print(UserDefaults.standard.string( forKey: "Setting1"))

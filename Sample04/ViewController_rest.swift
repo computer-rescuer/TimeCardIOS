@@ -8,7 +8,6 @@ import UIKit
 import Foundation
 
 class ViewController_rest:UIViewController{
-
     override func viewDidLoad() {
         super.viewDidLoad() //
     }

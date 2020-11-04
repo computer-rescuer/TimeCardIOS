@@ -51,7 +51,7 @@ class Utility {
         let now = NSDate()
         let formatter = DateFormatter()
         // 好きなフォーマットを設定する
-        formatter.dateFormat = "yyyyMMddHHmm"
+        formatter.dateFormat = "yyyy-MM-dd"
         let str = formatter.string(from: now as Date)
         return str
     }

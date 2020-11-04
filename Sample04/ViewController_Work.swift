@@ -16,9 +16,9 @@ class ViewController_Work: UIViewController , UIPickerViewDelegate,
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
- //       print("【ファイル内容】\(self.readFromFile())")
-        txt_out2.text=self.readFromFile()
-        txt_out2.isEditable=false
+//        print("【ファイル内容】\(self.readFromFile())")
+//        txt_out2.text=self.readFromFile()
+//        txt_out2.isEditable=false
        // Delegate設定
         pickerView.delegate = self
         pickerView.dataSource = self
