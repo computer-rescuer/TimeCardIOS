@@ -2,6 +2,7 @@ import UIKit
 //class ViewController_Work: UIViewController {
 class ViewController_Work: UIViewController , UIPickerViewDelegate,
                            UIPickerViewDataSource {
+    @IBOutlet weak var Result: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     var wk_sv_row=0
     @IBOutlet weak var riyu: UITextField!
@@ -16,6 +17,15 @@ class ViewController_Work: UIViewController , UIPickerViewDelegate,
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
+        let  str:String = self.readFromFile()
+        let arr:[String] = str.components(separatedBy: ",")
+        let rst:String
+        if str != ""{
+            rst = "社員番号：" + arr[3] + "　氏名：" + arr[2]
+            Result.text=rst
+        
+            
+        }
 //        print("【ファイル内容】\(self.readFromFile())")
 //        txt_out2.text=self.readFromFile()
 //        txt_out2.isEditable=false

@@ -9,7 +9,7 @@ import Foundation
 func crk_upload() {
     // 携帯のメモリから取得し、IPを生成する
     let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
-    let WK_URL_NAME = "http://IP/Android/pass_check.php"
+    let WK_URL_NAME = "http://IP/syain/file_dir/pass_check.php"
     let WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
     let Read_str:String = readFromFile()
     //start

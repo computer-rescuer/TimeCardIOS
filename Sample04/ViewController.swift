@@ -48,8 +48,8 @@ class ViewController: UIViewController {
             if (WK_file == "OK" ){
                 // 携帯のメモリから取得し、IPを生成する
                 let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
-                let WK_URL_NAME = "http://IP/Android/pass_list.csv"
-//              let WK_URL_NAME = "http://IP/Android/pass_check.csv"
+                let WK_URL_NAME = "http://IP/syain/file_dir/pass_list.csv"
+//              let WK_URL_NAME = "http://IP/syain/file_dir/pass_check.csv"
    
                 WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
         
