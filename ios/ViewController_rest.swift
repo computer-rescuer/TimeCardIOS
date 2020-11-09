@@ -1,20 +1,34 @@
+//
+//  File.swift
+//  Sample04
+//
+//  Created by CRK on 2020/10/23.
+//
 import UIKit
-//class ViewController_Work: UIViewController {
-class ViewController_Work: UIViewController , UIPickerViewDelegate,
+import Foundation
+
+class ViewController_rest: UIViewController, UIPickerViewDelegate,
                            UIPickerViewDataSource {
+    
     @IBOutlet weak var Result: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
-    var wk_sv_row=0
-    @IBOutlet weak var riyu: UITextField!
+    @IBOutlet weak var pickerView2: UIPickerView!
+    var wk_sv_row = 0
+    var rs_sv_row = 0
     
     @IBOutlet weak var datePicker: UIDatePicker!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var kyuka_cd: UITextField!
+    @IBOutlet weak var date: UITextField!
+    @IBOutlet weak var syounin: UITextField!
     
-    @IBOutlet weak var txt_out2: UITextView!
-   
     let dataList = [
-        "半休（午前）","欠勤（当日）","半休（午後）","予定休"
+        "欠勤（事前）","欠勤（当日）","有給（事前）","有給（当日）","半休（午前）","半休（午後）","忌引","代休","夏季休","冬季休"
     ]
+    
+    let dataList2 = [
+        "有り","無し"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let  str:String = self.readFromFile()
@@ -26,49 +40,57 @@ class ViewController_Work: UIViewController , UIPickerViewDelegate,
         
             
         }
-//        print("【ファイル内容】\(self.readFromFile())")
-//        txt_out2.text=self.readFromFile()
-//        txt_out2.isEditable=false
-       // Delegate設定
+        
         pickerView.delegate = self
         pickerView.dataSource = self
         pickerView.isHidden = true
-        riyu.text = ""
- 
-        // ピッカー設定
-//        datePicker.datePickerMode = UIDatePicker.Mode.dateAndTime
- //       datePicker.timeZone = NSTimeZone.local
-//        datePicker.locale = Locale.current
-        textField.inputView = datePicker
+        kyuka_cd.text = ""
+        
+        pickerView2.delegate = self
+        pickerView2.dataSource = self
+        pickerView2.isHidden = true
+        syounin.text = ""
+        
+        date.inputView = datePicker
         
         // 決定バーの生成
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
         _ = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-//        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
-//        toolbar.setItems([spacelItem, doneItem], animated: true)
         
         // インプットビュー設定
-        textField.inputView = datePicker
-        textField.inputAccessoryView = toolbar
+        date.inputView = datePicker
+        date.inputAccessoryView = toolbar
         
         // デフォルト日付
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-//        datePicker.date = formatter.date(from: "2018-5-14")!
     }
-    
+
     @IBAction func FOCUS(_ sender: Any) {
- //       riyu.isEnabled = true
         pickerView.isHidden = false
-        
     }
     
     @IBAction func LOST_F(_ sender: Any) {
 //        riyu.isEnabled = false
-        riyu.text = dataList[wk_sv_row]
+        kyuka_cd.text = dataList[wk_sv_row]
         pickerView.isHidden = true
     }
     
+    @IBAction func LOST_F_DATE(_ sender: Any) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        
+        date.text = formatter.string(from: datePicker.date)
+    }
+    
+    @IBAction func FOCUS2(_ sender: Any) {
+        pickerView2.isHidden = false
+    }
+    
+    @IBAction func LOST_F_2(_ sender: Any) {
+        syounin.text = dataList2[rs_sv_row]
+        pickerView2.isHidden = true
+    }
     /// ファイル読み込みサンプル
     func readFromFile() -> String {
                 /// ①DocumentsフォルダURL取得
@@ -94,25 +116,36 @@ class ViewController_Work: UIViewController , UIPickerViewDelegate,
         // UIPickerViewの行数、リストの数
         func pickerView(_ pickerView: UIPickerView,
                         numberOfRowsInComponent component: Int) -> Int {
-            return dataList.count
+            if pickerView == pickerView2 {
+                return dataList2.count
+            } else {
+                return dataList.count
+            }
         }
         
         // UIPickerViewの最初の表示
         func pickerView(_ pickerView: UIPickerView,
                         titleForRow row: Int,
                         forComponent component: Int) -> String? {
+            if pickerView == pickerView2 {
+                return dataList2[row]
+            } else {
+                return dataList[row]
+            }
             
-            return dataList[row]
         }
         
         // UIPickerViewのRowが選択された時の挙動
         func pickerView(_ pickerView: UIPickerView,
                         didSelectRow row: Int,
                         inComponent component: Int) {
-            
-            riyu.text = dataList[row]
-            wk_sv_row = row
-            
+            if pickerView == pickerView2 {
+                syounin.text = dataList2[row]
+                rs_sv_row = row
+            } else {
+                kyuka_cd.text = dataList[row]
+                wk_sv_row = row
+            }
         }
-        
+    
 }

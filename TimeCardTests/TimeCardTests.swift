@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Sample04
+@testable import TimeCard
 
 class Sample04Tests: XCTestCase {
 
