@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var B1: UIButton!
+    @IBOutlet weak var areaView: UIView!
     @IBOutlet weak var TextHN: UITextView!
     @IBOutlet weak var nowTimeLabel: UILabel!
     @IBOutlet weak var nowTimeLabel2: UILabel!
@@ -17,12 +17,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var PasswordLabel: UILabel!
     @IBOutlet weak var Syain_cdLabel: UILabel!
     @IBOutlet weak var AreaLabel: UILabel!
+    @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet weak var T2: UITextField!
     @IBOutlet weak var ScrollHN: UIScrollView!
     @IBOutlet weak var LabelHN: UILabel!
+    @IBOutlet weak var B1: UIButton!
+    @IBOutlet weak var B2: UIButton!
+    @IBOutlet weak var B3: UIButton!
+    
+    
     var arr = [String]()
     var timer: Timer!
     var WK_URL_NAME_R: String=""
+    var area:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +80,9 @@ class ViewController: UIViewController {
                 NameLabel.text = arr[2]
                 Syain_cdLabel.text = arr[3]
                 AreaLabel.text = arr[4]
+                B1.setTitle(arr[4], for: UIControl.State.normal)
+                B2.setTitle(arr[5], for: UIControl.State.normal)
+                B3.setTitle(arr[6], for: UIControl.State.normal)
                 print (arr[3])
                 print (arr[4])
             }
@@ -80,7 +90,10 @@ class ViewController: UIViewController {
             //60秒ごとに繰り返す、repeat every 1 minutes
             timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
                 timer.fire()
-            }
+        
+        areaView.isHidden = true
+        
+    }
             override func viewWillDisappear(_ animated: Bool) {
                 super.viewWillDisappear(true)
                 timer.invalidate()
@@ -93,22 +106,24 @@ class ViewController: UIViewController {
         }
     
     @IBAction func Push(_ sender: Any) {
-        var WK_PLACE = ""
-        //HanMenuで書き換えた出勤場所を上書きする
-               T2.text=UserDefaults.standard.string( forKey: "HanMenu1")
-               
-               if T2.text != "" {
-                    let WK_T2_NUM = Int(T2.text!)!
-                    WK_PLACE = arr[WK_T2_NUM]
-                
-                AreaLabel.text = arr[WK_T2_NUM]
-           }else{
-            WK_PLACE = arr[4]
-            
-           }
+        //HanMenuを使う際の実装
+//        var WK_PLACE = ""
+//        //HanMenuで書き換えた出勤場所を上書きする
+//               T2.text=UserDefaults.standard.string( forKey: "HanMenu1")
+//
+//               if T2.text != "" {
+//                    let WK_T2_NUM = Int(T2.text!)!
+//                    WK_PLACE = arr[WK_T2_NUM]
+//
+//                AreaLabel.text = arr[WK_T2_NUM]
+//           }else{
+//            WK_PLACE = arr[4]
+//
+//           }
+//        let tw = "10" + "," + arr[3] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + WK_PLACE + "," + Utility.nowTimeGet5()
         
         //書き込み用の文字列の作成
-        let tw = "10" + "," + arr[3] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + WK_PLACE + "," + Utility.nowTimeGet5()
+        let tw = "10" + "," + arr[3] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + area + "," + Utility.nowTimeGet5()
 
         /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
@@ -159,19 +174,43 @@ class ViewController: UIViewController {
                 self.LabelHN.text = data
             }
         })
-        var WK_PLACE = ""
-        //HanMenuで書き換えた出勤場所を上書きする
-        T2.text=UserDefaults.standard.string( forKey: "HanMenu1")
-               
-        if T2.text != "" {
-        let WK_T2_NUM = Int(T2.text!)!
-        WK_PLACE = arr[WK_T2_NUM]
-                
-        AreaLabel.text = arr[WK_T2_NUM]
-        }else{
-        WK_PLACE = arr[4]
-        }
+        //HanMenuを使う際の実装
+//        var WK_PLACE = ""
+//        //HanMenuで書き換えた出勤場所を上書きする
+//        T2.text=UserDefaults.standard.string( forKey: "HanMenu1")
+//
+//        if T2.text != "" {
+//        let WK_T2_NUM = Int(T2.text!)!
+//        WK_PLACE = arr[WK_T2_NUM]
+//
+//        AreaLabel.text = arr[WK_T2_NUM]
+//        }else{
+//        WK_PLACE = arr[4]
+//        }
     }
+    
+    @IBAction func FOCUS(_ sender: Any) {
+        areaView.isHidden = false
+    }
+    
+    @IBAction func B1_Click(_ sender: Any) {
+        AreaLabel.text = arr[4]
+        area = arr[4]
+        areaView.isHidden = true
+    }
+    
+    @IBAction func B2_Click(_ sender: Any) {
+        AreaLabel.text = arr[5]
+        area = arr[5]
+        areaView.isHidden = true
+    }
+    
+    @IBAction func B3_Click(_ sender: Any) {
+        AreaLabel.text = arr[6]
+        area = arr[6]
+        areaView.isHidden = true
+    }
+    
     func readFromFile() -> String {
                 /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first

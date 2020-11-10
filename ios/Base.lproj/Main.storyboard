@@ -29,9 +29,9 @@
                                 <color key="backgroundColor" red="1" green="0.6872669549" blue="0.35971401330000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem title="出勤報告" id="SWO-ef-f7c">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" id="NJK-YF-2Zq">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="bus.doubledecker" catalog="system" id="NJK-YF-2Zq">
                                             <connections>
-                                                <segue destination="n43-yE-Igu" kind="presentation" id="wAy-xr-saJ"/>
+                                                <action selector="FOCUS:" destination="BYZ-38-t0r" id="hde-v6-8am"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -51,7 +51,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryW-XM-g5C">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="場所" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryW-XM-g5C">
                                 <rect key="frame" x="6" y="150" width="79" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -130,6 +130,43 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TA8-jp-t6F">
+                                <rect key="frame" x="0.0" y="44" width="240" height="213"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWs-IG-JTD">
+                                        <rect key="frame" x="8" y="95" width="224" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="B3_Click:" destination="n43-yE-Igu" eventType="touchUpInside" id="WUG-FY-bo8"/>
+                                            <action selector="B3_Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nGq-cE-xuk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szl-aO-nK4">
+                                        <rect key="frame" x="8" y="54" width="224" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="B2_Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Np-ud-kRq"/>
+                                            <action selector="B2_Click:" destination="n43-yE-Igu" eventType="touchUpInside" id="ri3-6c-uz2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Sw-jH-Z82">
+                                        <rect key="frame" x="8" y="17" width="224" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="B1_Click:" destination="n43-yE-Igu" eventType="touchUpInside" id="OZi-lD-qHk"/>
+                                            <action selector="B1_Click:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i1C-Jh-uIR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -137,6 +174,9 @@
                     <tabBarItem key="tabBarItem" title="出勤" id="alp-Vv-mIL"/>
                     <connections>
                         <outlet property="AreaLabel" destination="ryW-XM-g5C" id="FT7-uD-Xck"/>
+                        <outlet property="B1" destination="2Sw-jH-Z82" id="0op-KL-Q03"/>
+                        <outlet property="B2" destination="szl-aO-nK4" id="Obe-54-KQA"/>
+                        <outlet property="B3" destination="zWs-IG-JTD" id="NBF-vY-0F2"/>
                         <outlet property="LabelHN" destination="34y-eN-MHO" id="QH4-Ss-o7L"/>
                         <outlet property="NameLabel" destination="ebn-ct-3Sk" id="7fO-Ke-ewT"/>
                         <outlet property="PasswordLabel" destination="dTr-G5-3Lb" id="Zcg-pf-mTe"/>
@@ -144,6 +184,8 @@
                         <outlet property="Syain_cdLabel" destination="3be-5U-UOW" id="RBw-dg-kl5"/>
                         <outlet property="T2" destination="bvN-gu-RG1" id="YXZ-OJ-6em"/>
                         <outlet property="UserIDLabel" destination="9VU-pp-u8L" id="YaN-vW-yax"/>
+                        <outlet property="areaView" destination="TA8-jp-t6F" id="bgY-Kd-hBD"/>
+                        <outlet property="menu" destination="NJK-YF-2Zq" id="Mf8-5q-fhR"/>
                         <outlet property="nowTimeLabel" destination="MDs-yh-Oll" id="RHO-Zy-zIi"/>
                         <outlet property="nowTimeLabel2" destination="z9u-Xt-Do0" id="8Ju-d8-6nC"/>
                     </connections>
@@ -344,7 +386,7 @@
         <!--設定-->
         <scene sceneID="bsU-dl-iWI">
             <objects>
-                <viewController id="d1d-a5-eLM" customClass="ViewController_Setting" customModule="TimeCard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setting" id="d1d-a5-eLM" customClass="ViewController_Setting" customModule="TimeCard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="igB-Dk-6tu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -705,11 +747,11 @@
             <objects>
                 <viewController id="n43-yE-Igu" customClass="ViewController_HanMenu" customModule="TimeCard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" tag="1" contentMode="scaleToFill" id="Vt9-3o-yKa" customClass="ViewControler">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1el-fk-lmq">
-                                <rect key="frame" x="20" y="-12" width="240" height="213"/>
+                                <rect key="frame" x="0.0" y="44" width="240" height="213"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="86M-zX-CFM">
@@ -766,7 +808,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="rectangle.and.pencil.and.ellipsis.rtl" catalog="system" width="128" height="92"/>
+        <image name="bus.doubledecker" catalog="system" width="125" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
