@@ -30,10 +30,10 @@ class ViewController: UIViewController {
     var timer: Timer!
     var WK_URL_NAME_R: String=""
     var area:String = ""
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+// 画面に表示された直後に呼ばれます。
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear")
         //ボタンの連続押下の禁止
         UIButton.appearance().isExclusiveTouch = true
         
@@ -56,35 +56,38 @@ class ViewController: UIViewController {
                 // 携帯のメモリから取得し、IPを生成する
                 let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
                 let WK_URL_NAME = "http://IP/syain/file_dir/pass_list.csv"
-//              let WK_URL_NAME = "http://IP/syain/file_dir/pass_check.csv"
-   
                 WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
-        
+                print(WK_URL_NAME_R)
                 Download_crk(stUrl: WK_URL_NAME_R,
                 fn: { data in
                     DispatchQueue.main.async {
                           //取得した文字列データをUITextViewに収納
                         self.LabelHN.text = data
-        
+                        print(data)
+
                     }
                 })
                 //HanMenuが呼び出される前にクリア
                 UserDefaults.standard.set("", forKey: "HanMenu1")
                 //端末内テキストから名前を取得し、表示する
-                let  str:String = self.readFromFile()
-                let arr2:[String] = str.components(separatedBy: ",")
-                arr.append(contentsOf: arr2)
+                let  str:String = ReadFromFile(file_nm: "setting.txt")
+                let arr:[String] = str.components(separatedBy: ",")
+ //              arr.append(contentsOf: arr2)
                 UserIDLabel.text = arr[0]
                 PasswordLabel.text = arr[1]
-                
                 NameLabel.text = arr[2]
                 Syain_cdLabel.text = arr[3]
                 AreaLabel.text = arr[4]
                 B1.setTitle(arr[4], for: UIControl.State.normal)
                 B2.setTitle(arr[5], for: UIControl.State.normal)
                 B3.setTitle(arr[6], for: UIControl.State.normal)
-                print (arr[3])
-                print (arr[4])
+                UserDefaults.standard.set(arr[0], forKey: "Uid0")
+                UserDefaults.standard.set(arr[1], forKey: "Pwd1")
+                UserDefaults.standard.set(arr[2], forKey: "Name2")
+                UserDefaults.standard.set(arr[3], forKey: "Scode3")
+                UserDefaults.standard.set(arr[4], forKey: "Area4")
+                UserDefaults.standard.set(arr[5], forKey: "Area5")
+                UserDefaults.standard.set(arr[6], forKey: "Area6")
             }
         
             //60秒ごとに繰り返す、repeat every 1 minutes
@@ -96,7 +99,7 @@ class ViewController: UIViewController {
     }
             override func viewWillDisappear(_ animated: Bool) {
                 super.viewWillDisappear(true)
-                timer.invalidate()
+//                timer.invalidate()
             }
             @objc func update(tm: Timer) {
             //この関数を繰り返す、repeat this function        
@@ -123,9 +126,9 @@ class ViewController: UIViewController {
 //        let tw = "10" + "," + arr[3] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + WK_PLACE + "," + Utility.nowTimeGet5()
         
         //書き込み用の文字列の作成
-        let tw = "10" + "," + arr[3] + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + area + "," + Utility.nowTimeGet5()
-
-        /// ①DocumentsフォルダURL取得
+        let wk3 = UserDefaults.standard.string( forKey: "Scode3") ?? ""
+        let tw = "10" + "," + wk3 + "," + Utility.nowTimeGet3() + "," + Utility.nowTimeGet4() + "," + area + "," + Utility.nowTimeGet5()
+              /// ①DocumentsフォルダURL取得
         guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             fatalError("フォルダURL取得エラー")
         }
@@ -194,49 +197,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func B1_Click(_ sender: Any) {
-        AreaLabel.text = arr[4]
-        area = arr[4]
+        area = UserDefaults.standard.string( forKey: "Area4") ?? ""
         areaView.isHidden = true
+        AreaLabel.text=UserDefaults.standard.string( forKey: "Area4")
     }
-    
     @IBAction func B2_Click(_ sender: Any) {
-        AreaLabel.text = arr[5]
-        area = arr[5]
+        area = UserDefaults.standard.string( forKey: "Area5") ?? ""
         areaView.isHidden = true
+        AreaLabel.text=UserDefaults.standard.string( forKey: "Area5")
     }
-    
     @IBAction func B3_Click(_ sender: Any) {
-        AreaLabel.text = arr[6]
-        area = arr[6]
+        area = UserDefaults.standard.string( forKey: "Area6") ?? ""
         areaView.isHidden = true
+        AreaLabel.text=UserDefaults.standard.string( forKey: "Area6")
     }
-    
-    func readFromFile() -> String {
-                /// ①DocumentsフォルダURL取得
-        guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-        else {fatalError("フォルダURL取得エラー")
-        }
-        /// ②対象のファイルURL取得
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        let url = NSURL(fileURLWithPath: path)
-        if let pathComponent = url.appendingPathComponent("setting.txt"){
-            let filePath = pathComponent.path
-            let fileManager = FileManager.default
-            if fileManager.fileExists(atPath: filePath) {
-                print("FILE AVAILABLE")
-            } else {
-                return ""
-            }
-        } else {
-            return ""
-        }
- 
-        /// ③ファイルの読み込み
-        let fileURL = dirURL.appendingPathComponent("setting.txt")
-        guard let fileContents = try? String(contentsOf: fileURL)
-        else {fatalError("ファイル読み込みエラー")
-        }
-        return fileContents
-    }
-    
 }

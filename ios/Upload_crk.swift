@@ -11,7 +11,9 @@ func crk_upload() {
     let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
     let WK_URL_NAME = "http://IP/syain/file_dir/pass_check.php"
     let WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
-    let Read_str:String = readFromFile()
+    let Read_str:String = ReadFromFile(file_nm: "main.txt")
+    
+
     //start
     print("Start")
     //created NSURL
@@ -64,30 +66,4 @@ func crk_upload() {
     task.resume()
     print("End")
 }
-func readFromFile() -> String {
-            /// ①DocumentsフォルダURL取得
-    guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
-    else {fatalError("フォルダURL取得エラー")
-    }
-    /// ②対象のファイルURL取得
-    let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-    let url = NSURL(fileURLWithPath: path)
-    if let pathComponent = url.appendingPathComponent("main.txt"){
-        let filePath = pathComponent.path
-        let fileManager = FileManager.default
-        if fileManager.fileExists(atPath: filePath) {
-            print("FILE AVAILABLE")
-        } else {
-            return ""
-        }
-    } else {
-        return ""
-    }
 
-    /// ③ファイルの読み込み
-    let fileURL = dirURL.appendingPathComponent("main.txt")
-    guard let fileContents = try? String(contentsOf: fileURL)
-    else {fatalError("ファイル読み込みエラー")
-    }
-    return fileContents
-}

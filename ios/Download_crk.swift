@@ -16,6 +16,8 @@ func Download_crk(stUrl:String, fn:@escaping (_ data: String)->Void)
         if error == nil, let data = data, let _ = response as? HTTPURLResponse {
             let data = data
             fn(String(data: data, encoding: .utf8) ?? "")
+            print(r)
+           print(data)
         }
-        }.resume()
+    }.resume()
 }

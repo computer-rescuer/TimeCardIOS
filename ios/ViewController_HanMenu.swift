@@ -17,9 +17,9 @@ class ViewController_HanMenu: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let  str:String = self.readFromFile()
+        let  str:String = ReadFromFile(file_nm: "setting.txt")
         let arr:[String] = str.components(separatedBy: ",")
-        if str != ""{
+        if str != "NG"{
             B1.setTitle(arr[4], for: UIControl.State.normal)
             B2.setTitle(arr[5], for: UIControl.State.normal)
             B3.setTitle(arr[6], for: UIControl.State.normal)
@@ -38,34 +38,6 @@ class ViewController_HanMenu: UIViewController {
 
     }
   
-    func readFromFile() -> String {
-        /// ①DocumentsフォルダURL取得
-        guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            fatalError("フォルダURL取得エラー")
-        }
-        /// ②対象のファイルURL取得
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        let url = NSURL(fileURLWithPath: path)
-        if let pathComponent = url.appendingPathComponent("setting.txt"){
-            let filePath = pathComponent.path
-            let fileManager = FileManager.default
-            if fileManager.fileExists(atPath: filePath) {
-                print("FILE AVAILABLE")
-            } else {
-                return ""
-            }
-        } else {
-            return ""
-        }
-
-        /// ③ファイルの読み込み
-        let fileURL = dirURL.appendingPathComponent("setting.txt")
-        guard let fileContents = try? String(contentsOf: fileURL)
-             else {
-            fatalError("ファイル読み込みエラー")
-        }
-        return fileContents
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

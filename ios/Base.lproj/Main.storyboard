@@ -195,10 +195,10 @@
             </objects>
             <point key="canvasLocation" x="1063.768115942029" y="-442.63392857142856"/>
         </scene>
-        <!--View-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="EUA-9M-1Rj">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0gX-zp-u6y" customClass="view" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0gX-zp-u6y" customClass="MyTabBarController" customModule="TimeCard" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gWJ-80-O2E">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

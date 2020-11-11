@@ -22,9 +22,12 @@ class ViewController_Work: UIViewController , UIPickerViewDelegate,
     ]
     var dataList2:[String] = ["","",""]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let  str:String = self.readFromFile()
+    // 画面に表示された直後に呼ばれます。
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear")
+        let  str:String = ReadFromFile(file_nm: "setting.txt")
+
         let arr:[String] = str.components(separatedBy: ",")
         let rst:String
         if str != ""{
@@ -35,9 +38,6 @@ class ViewController_Work: UIViewController , UIPickerViewDelegate,
             dataList2[2] = arr[6]
             
         }
-//        print("【ファイル内容】\(self.readFromFile())")
-//        txt_out2.text=self.readFromFile()
-//        txt_out2.isEditable=false
        // Delegate設定
         pickerView.delegate = self
         pickerView.dataSource = self
@@ -74,7 +74,39 @@ class ViewController_Work: UIViewController , UIPickerViewDelegate,
         formatter.dateFormat = "yyyyMMdd"
 //        datePicker.date = formatter.date(from: "2018-5-14")!
     }
-    
+    // UI 部品を View へセットする場合はこちらをオーバーライドします。
+    // ただし、UI 部品のセットはこのメソッドでなくても問題ありません。
+    override func loadView() {
+        super.loadView()
+        print("loadView")
+    }
+
+    // 初期表示時に必要な処理を設定します。
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("viewDidLoad")
+    }
+
+    // 画面に表示される直前に呼ばれます。
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("viewWillAppear")
+    }
+    // 画面から非表示になる直前に呼ばれます。
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("viewWillDisappear")
+    }
+    // 画面から非表示になる直後に呼ばれます。
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("viewDidDisappear")
+    }
+    // メモリーが不足にてインスタンスが破棄される直前に呼ばれます。
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        print("didReceiveMemoryWarning")
+    }
     @IBAction func FOCUS(_ sender: Any) {
  //       riyu.isEnabled = true
         pickerView.isHidden = false
@@ -110,24 +142,6 @@ class ViewController_Work: UIViewController , UIPickerViewDelegate,
         formatter.dateFormat = "yyyyMMdd"
         
         toDate.text = formatter.string(from: datePicker2.date)
-    }
-    
-    /// ファイル読み込みサンプル
-    func readFromFile() -> String {
-                /// ①DocumentsフォルダURL取得
-        guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            fatalError("フォルダURL取得エラー")
-        }
-        /// ②対象のファイルURL取得
-        let fileURL = dirURL.appendingPathComponent("setting.txt")
- 
-        /// ③ファイルの読み込み
-        guard let fileContents = try? String(contentsOf: fileURL)
-        else {
-            fatalError("ファイル読み込みエラー")
-        }
-      //④読み込んだ内容を戻り値として返す
-        return fileContents
     }
     // UIPickerViewの列の数
         func numberOfComponents(in pickerView: UIPickerView) -> Int {

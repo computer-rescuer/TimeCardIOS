@@ -29,9 +29,11 @@ class ViewController_rest: UIViewController, UIPickerViewDelegate,
         "有り","無し"
     ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let  str:String = self.readFromFile()
+    // 画面に表示された直後に呼ばれます。
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear")
+        let  str:String = ReadFromFile(file_nm: "setting.txt")
         let arr:[String] = str.components(separatedBy: ",")
         let rst:String
         if str != ""{
@@ -90,23 +92,6 @@ class ViewController_rest: UIViewController, UIPickerViewDelegate,
     @IBAction func LOST_F_2(_ sender: Any) {
         syounin.text = dataList2[rs_sv_row]
         pickerView2.isHidden = true
-    }
-    /// ファイル読み込みサンプル
-    func readFromFile() -> String {
-                /// ①DocumentsフォルダURL取得
-        guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            fatalError("フォルダURL取得エラー")
-        }
-        /// ②対象のファイルURL取得
-        let fileURL = dirURL.appendingPathComponent("setting.txt")
- 
-        /// ③ファイルの読み込み
-        guard let fileContents = try? String(contentsOf: fileURL)
-        else {
-            fatalError("ファイル読み込みエラー")
-        }
-      //④読み込んだ内容を戻り値として返す
-        return fileContents
     }
     // UIPickerViewの列の数
         func numberOfComponents(in pickerView: UIPickerView) -> Int {

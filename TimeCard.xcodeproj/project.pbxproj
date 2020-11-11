@@ -23,6 +23,8 @@
 		440488A1253ACA57002516A1 /* Upload_crk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440488A0253ACA57002516A1 /* Upload_crk.swift */; };
 		4452FE1A253AF7D80080D819 /* ViewController_Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4452FE19253AF7D80080D819 /* ViewController_Work.swift */; };
 		447E9848253B6FAB00DB1983 /* Download_crk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447E9847253B6FAB00DB1983 /* Download_crk.swift */; };
+		44F81A3A255B6F1800B8B65E /* ReadFromFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F81A39255B6F1800B8B65E /* ReadFromFile.swift */; };
+		44F81A3F255B73A700B8B65E /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44F81A3E255B73A700B8B65E /* MyTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		440488A0253ACA57002516A1 /* Upload_crk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload_crk.swift; sourceTree = "<group>"; };
 		4452FE19253AF7D80080D819 /* ViewController_Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Work.swift; sourceTree = "<group>"; };
 		447E9847253B6FAB00DB1983 /* Download_crk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download_crk.swift; sourceTree = "<group>"; };
+		44F81A39255B6F1800B8B65E /* ReadFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFromFile.swift; sourceTree = "<group>"; };
+		44F81A3E255B73A700B8B65E /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 				081CB70D25465ECD000294FB /* ViewController_HanMenu.swift */,
 				084C76C02542B7EE00BA4CEB /* ViewController_rest.swift */,
 				4452FE19253AF7D80080D819 /* ViewController_Work.swift */,
+				44F81A3E255B73A700B8B65E /* MyTabBarController.swift */,
+				44F81A39255B6F1800B8B65E /* ReadFromFile.swift */,
 				08A6C496253FD7DB00E08B55 /* ViewController_Setting.swift */,
 			);
 			path = ios;
@@ -289,10 +295,12 @@
 				08A6C497253FD7DB00E08B55 /* ViewController_Setting.swift in Sources */,
 				4452FE1A253AF7D80080D819 /* ViewController_Work.swift in Sources */,
 				4404886D253A78AB002516A1 /* SceneDelegate.swift in Sources */,
+				44F81A3F255B73A700B8B65E /* MyTabBarController.swift in Sources */,
 				084C76C12542B7EE00BA4CEB /* ViewController_rest.swift in Sources */,
 				08A6C4A625401FBD00E08B55 /* AttendButton_Custom.swift in Sources */,
 				447E9848253B6FAB00DB1983 /* Download_crk.swift in Sources */,
 				08BB6B9225415320000EF734 /* Utility.swift in Sources */,
+				44F81A3A255B6F1800B8B65E /* ReadFromFile.swift in Sources */,
 				081CB70E25465ECD000294FB /* ViewController_HanMenu.swift in Sources */,
 				440488A1253ACA57002516A1 /* Upload_crk.swift in Sources */,
 			);

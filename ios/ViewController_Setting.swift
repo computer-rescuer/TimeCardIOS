@@ -16,13 +16,15 @@ class ViewController_Setting:UIViewController{
     @IBOutlet weak var Area2: UITextField!
     @IBOutlet weak var Area3: UITextField!
     @IBOutlet weak var Host: UITextField!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let  str:String = self.readFromFile()
-        let arr:[String] = str.components(separatedBy: ",")
-        let rst:String
-        if str != ""{
-            
+    // 画面に表示された直後に呼ばれます。
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("viewDidAppear")
+        let  str:String = ReadFromFile(file_nm: "setting.txt")
+
+        if str != "NG"{
+            let arr:[String] = str.components(separatedBy: ",")
+            let rst:String
             UserID.text=arr[0]
             Password.text=arr[1]
             Name.text=arr[2]
@@ -31,11 +33,10 @@ class ViewController_Setting:UIViewController{
             Area2.text=arr[5]
             Area3.text=arr[6]
 //          Host.text=arr[7]
-        
+            Host.text=UserDefaults.standard.string( forKey: "Setting1")
+            print(UserDefaults.standard.string( forKey: "Setting1"))
             
         }
-        Host.text=UserDefaults.standard.string( forKey: "Setting1")
-        print(UserDefaults.standard.string( forKey: "Setting1"))
     }
     @IBAction func Save(_ sender: Any) {
         let WK_HOST = Host.text!
@@ -117,34 +118,5 @@ class ViewController_Setting:UIViewController{
         dialog.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         //実際に表示させる
         self.present(dialog, animated: true, completion: nil)
-    }
-    
-    func readFromFile() -> String {
-        /// ①DocumentsフォルダURL取得
-        guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            fatalError("フォルダURL取得エラー")
-        }
-        /// ②対象のファイルURL取得
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        let url = NSURL(fileURLWithPath: path)
-        if let pathComponent = url.appendingPathComponent("setting.txt"){
-            let filePath = pathComponent.path
-            let fileManager = FileManager.default
-            if fileManager.fileExists(atPath: filePath) {
-                print("FILE AVAILABLE")
-            } else {
-                return ""
-            }
-        } else {
-            return ""
-        }
-
-        /// ③ファイルの読み込み
-        let fileURL = dirURL.appendingPathComponent("setting.txt")
-        guard let fileContents = try? String(contentsOf: fileURL)
-             else {
-            fatalError("ファイル読み込みエラー")
-        }
-        return fileContents
     }
 }
