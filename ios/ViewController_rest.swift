@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  Sample04
+//  TimeCard
 //
 //  Created by CRK on 2020/10/23.
 //
@@ -21,6 +21,9 @@ class ViewController_rest: UIViewController, UIPickerViewDelegate,
     @IBOutlet weak var date: UITextField!
     @IBOutlet weak var syounin: UITextField!
     
+
+    @IBOutlet weak var Navi: UINavigationBar!
+    @IBOutlet weak var NBar: UINavigationItem!
     let dataList = [
         "欠勤（事前）","欠勤（当日）","有給（事前）","有給（当日）","半休（午前）","半休（午後）","忌引","代休","夏季休","冬季休"
     ]
@@ -37,10 +40,9 @@ class ViewController_rest: UIViewController, UIPickerViewDelegate,
         let arr:[String] = str.components(separatedBy: ",")
         let rst:String
         if str != ""{
-            rst = "社員番号：" + arr[3] + "　氏名：" + arr[2]
-            Result.text=rst
-        
-            
+            rst = arr[3] + "\n" + arr[2]
+            Result.text = rst
+
         }
         
         pickerView.delegate = self
@@ -66,10 +68,15 @@ class ViewController_rest: UIViewController, UIPickerViewDelegate,
         // デフォルト日付
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
+        datePicker.isHidden = true
     }
 
     @IBAction func FOCUS(_ sender: Any) {
         pickerView.isHidden = false
+    }
+    
+    @IBAction func FOCUS_DATE(_ sender: Any) {
+        datePicker.isHidden = false
     }
     
     @IBAction func LOST_F(_ sender: Any) {
@@ -83,6 +90,7 @@ class ViewController_rest: UIViewController, UIPickerViewDelegate,
         formatter.dateFormat = "yyyyMMdd"
         
         date.text = formatter.string(from: datePicker.date)
+        datePicker.isHidden = true
     }
     
     @IBAction func FOCUS2(_ sender: Any) {

@@ -1,6 +1,6 @@
 //
-//  Sample04Tests.swift
-//  Sample04Tests
+//  TimeCardTests.swift
+//  TimeCardTests
 //
 //  Created by Computer=Rescuer.com on 2020/10/17.
 //
@@ -8,7 +8,7 @@
 import XCTest
 @testable import TimeCard
 
-class Sample04Tests: XCTestCase {
+class TimeCardTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

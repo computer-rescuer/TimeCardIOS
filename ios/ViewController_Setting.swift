@@ -1,6 +1,6 @@
 //
 //  ViewController_Setting
-//  Sample04
+//  TimeCard
 //
 //  Created by CRK on 2020/10/21.
 //
@@ -63,7 +63,7 @@ class ViewController_Setting:UIViewController{
         
         /// ②対象のファイルURL取得
         let fileURL = dirURL.appendingPathComponent("setting.txt")
-
+        print(fileURL)
         /// ③ファイルの書き込み
         do {
             try alltf.write(to: fileURL, atomically: true, encoding: .utf8)

@@ -1,6 +1,6 @@
 //
-//  Sample04UITests.swift
-//  Sample04UITests
+//  TimeCardUITests.swift
+//  TimeCardUITests
 //
 //  Created by Computer=Rescuer.com on 2020/10/17.
 //

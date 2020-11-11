@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Sample04
+//  TimeCard
 //
 //  Created by Computer=Rescuer.com on 2020/10/17.
 //
