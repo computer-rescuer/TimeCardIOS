@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         //ボタンの連続押下の禁止
         UIButton.appearance().isExclusiveTouch = true
         
+        
         ///setting.txtが存在しない場合はスマホのメモリを見にいかない
             guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
             else {
@@ -63,6 +64,8 @@ class ViewController: UIViewController {
                     DispatchQueue.main.async {
                           //取得した文字列データをUITextViewに収納
                         self.LabelHN.text = data
+                        self.LabelHN.sizeToFit()
+                        self.ScrollHN.contentSize = CGSize(width: self.LabelHN.frame.width, height: self.LabelHN.frame.height)
                         print(data)
 
                     }
@@ -159,22 +162,32 @@ class ViewController: UIViewController {
         crk_upload();
 
         //出勤状況エリアに格納
+        let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
+        let WK_URL_NAME = "http://IP/syain/file_dir/pass_list.csv"
+        WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
         Download_crk(stUrl: WK_URL_NAME_R,
         fn: { data in
             DispatchQueue.main.async {
                   //取得した文字列データをUITextViewに収納
                 self.LabelHN.text = data
+                self.LabelHN.sizeToFit()
+                self.ScrollHN.contentSize = CGSize(width: self.LabelHN.frame.width, height: self.LabelHN.frame.height)
             }
         })
     }
 
         
     @IBAction func Reload(_ sender: Any) {
+        let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
+        let WK_URL_NAME = "http://IP/syain/file_dir/pass_list.csv"
+        WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
     Download_crk(stUrl: WK_URL_NAME_R,
         fn: { data in
             DispatchQueue.main.async {
                   //取得した文字列データをUITextViewに収納
                 self.LabelHN.text = data
+                self.LabelHN.sizeToFit()
+                self.ScrollHN.contentSize = CGSize(width: self.LabelHN.frame.width, height: self.LabelHN.frame.height)
             }
         })
         //HanMenuを使う際の実装

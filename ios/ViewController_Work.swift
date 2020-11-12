@@ -31,7 +31,7 @@ class ViewController_Work: UIViewController , UIPickerViewDelegate,
         let arr:[String] = str.components(separatedBy: ",")
         let rst:String
         if str != ""{
-            rst = "社員番号：" + arr[3] + "　氏名：" + arr[2]
+            rst = arr[3] + "\n" + arr[2]
             Result.text=rst
             dataList2[0] = arr[4]
             dataList2[1] = arr[5]
