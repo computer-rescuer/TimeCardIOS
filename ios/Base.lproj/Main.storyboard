@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0gX-zp-u6y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0gX-zp-u6y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -83,17 +83,6 @@
                                     <action selector="T2:" destination="0Nl-7K-aMG" eventType="editingDidEnd" id="39R-Rr-wdn"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKN-ZV-1eL">
-                                <rect key="frame" x="319" y="507" width="40" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="更新">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="Reload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fPn-vD-ijR"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDs-yh-Oll">
                                 <rect key="frame" x="69" y="178" width="273" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -171,6 +160,31 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="c6O-3K-07j"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="s5n-IR-to1"/>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2020/11/13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrd-ft-m2C">
+                                <rect key="frame" x="164" y="472" width="87" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pN4-bj-V6w">
+                                <rect key="frame" x="309" y="44" width="105" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKN-ZV-1eL">
+                                <rect key="frame" x="337" y="559" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.42047914860000002" green="0.63880306480000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="更新">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="Reload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fPn-vD-ijR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -184,6 +198,7 @@
                         <outlet property="LabelHN" destination="pBH-4W-uzB" id="Na5-7f-giC"/>
                         <outlet property="NameLabel" destination="ebn-ct-3Sk" id="7fO-Ke-ewT"/>
                         <outlet property="PasswordLabel" destination="dTr-G5-3Lb" id="Zcg-pf-mTe"/>
+                        <outlet property="Result" destination="pN4-bj-V6w" id="es3-HE-Z7k"/>
                         <outlet property="ScrollHN" destination="Yiw-kI-aVh" id="jGu-UY-CUZ"/>
                         <outlet property="Syain_cdLabel" destination="3be-5U-UOW" id="RBw-dg-kl5"/>
                         <outlet property="T2" destination="bvN-gu-RG1" id="YXZ-OJ-6em"/>
@@ -263,6 +278,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="FOCUS_DATE:" destination="sqI-zf-2bK" eventType="editingDidEnd" id="xci-bn-5mK"/>
                                     <action selector="LOST_F_DATE:" destination="sqI-zf-2bK" eventType="editingDidEnd" id="9q1-oa-mcB"/>
                                 </connections>
                             </textField>
@@ -580,6 +596,13 @@
                                     <action selector="Save:" destination="d1d-a5-eLM" eventType="touchUpInside" id="ul5-xN-O4o"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qH-6k-RdA">
+                                <rect key="frame" x="309" y="44" width="105" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KIE-WK-XFA"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -592,6 +615,7 @@
                         <outlet property="Host" destination="km3-hc-QlH" id="8y3-4c-fo7"/>
                         <outlet property="Name" destination="Zz3-Ct-Wze" id="vmU-BQ-twF"/>
                         <outlet property="Password" destination="fVC-4o-vWc" id="1Jj-fs-awI"/>
+                        <outlet property="Result" destination="7qH-6k-RdA" id="cc7-xg-iQr"/>
                         <outlet property="Syain_cd" destination="mrF-dc-CsX" id="PyE-V5-TUa"/>
                         <outlet property="UserID" destination="5xs-3m-kIj" id="4dc-rZ-SuD"/>
                     </connections>

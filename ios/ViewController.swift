@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var B1: UIButton!
     @IBOutlet weak var B2: UIButton!
     @IBOutlet weak var B3: UIButton!
+    @IBOutlet weak var Result: UILabel!
     
     
     var arr = [String]()
@@ -75,11 +76,15 @@ class ViewController: UIViewController {
                 //端末内テキストから名前を取得し、表示する
                 let  str:String = ReadFromFile(file_nm: "setting.txt")
                 let arr:[String] = str.components(separatedBy: ",")
+                let rst:String
  //              arr.append(contentsOf: arr2)
+                rst = arr[3] + "\n" + arr[2]
+                Result.text=rst
                 UserIDLabel.text = arr[0]
                 PasswordLabel.text = arr[1]
                 NameLabel.text = arr[2]
                 Syain_cdLabel.text = arr[3]
+                area = arr[4]
                 AreaLabel.text = arr[4]
                 B1.setTitle(arr[4], for: UIControl.State.normal)
                 B2.setTitle(arr[5], for: UIControl.State.normal)
@@ -91,6 +96,7 @@ class ViewController: UIViewController {
                 UserDefaults.standard.set(arr[4], forKey: "Area4")
                 UserDefaults.standard.set(arr[5], forKey: "Area5")
                 UserDefaults.standard.set(arr[6], forKey: "Area6")
+                
             }
         
             //60秒ごとに繰り返す、repeat every 1 minutes

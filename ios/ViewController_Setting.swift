@@ -16,6 +16,7 @@ class ViewController_Setting:UIViewController{
     @IBOutlet weak var Area2: UITextField!
     @IBOutlet weak var Area3: UITextField!
     @IBOutlet weak var Host: UITextField!
+    @IBOutlet weak var Result: UILabel!
     // 画面に表示された直後に呼ばれます。
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -25,6 +26,8 @@ class ViewController_Setting:UIViewController{
         if str != "NG"{
             let arr:[String] = str.components(separatedBy: ",")
             let rst:String
+            rst = arr[3] + "\n" + arr[2]
+            Result.text=rst
             UserID.text=arr[0]
             Password.text=arr[1]
             Name.text=arr[2]

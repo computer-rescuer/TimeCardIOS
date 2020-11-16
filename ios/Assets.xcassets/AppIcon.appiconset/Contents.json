@@ -1,109 +1,109 @@
 {
   "images" : [
     {
-      "filename" : "arrow-top-2x.png",
+      "filename" : "crk_icon_40-2.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "arrow-top-2x-1.png",
+      "filename" : "crk_icon_60.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "arrow-thick-left-2x.png",
+      "filename" : "crk_icon_58-1.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "_i_icon_11354_icon_113540_512のコピー4.png",
+      "filename" : "crk_icon_87.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "_i_icon_11354_icon_113540_512のコピー5.png",
+      "filename" : "crk_icon_80-1.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "nu00706.png",
+      "filename" : "crk_icon_120-1.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "nu00706-1.png",
+      "filename" : "crk_icon_120.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "_i_icon_11354_icon_113540_512のコピー6.png",
+      "filename" : "crk_icon_180.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
     },
     {
-      "filename" : "account-login-2xのコピー3.png",
+      "filename" : "crk_icon_20.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
     },
     {
-      "filename" : "account-login-2xのコピー3-1.png",
+      "filename" : "crk_icon_40-1.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "account-login-2xのコピー5.png",
+      "filename" : "crk_icon_29.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "29x29"
     },
     {
-      "filename" : "account-login-2xのコピー5-1.png",
+      "filename" : "crk_icon_58.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "account-login-2xのコピー3-2.png",
+      "filename" : "crk_icon_40.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "40x40"
     },
     {
-      "filename" : "account-login-2xのコピー3-3.png",
+      "filename" : "crk_icon_80.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "_i_icon_11354_icon_113540_512のコピー2.png",
+      "filename" : "crk_icon_76.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "76x76"
     },
     {
-      "filename" : "_i_icon_11354_icon_113540_512のコピー3.png",
+      "filename" : "crk_icon_152.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
-      "filename" : "_i_icon_11354_icon_113540_512.png",
+      "filename" : "crk_icon_167.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "79638604.png",
+      "filename" : "crk_icon_1024.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
