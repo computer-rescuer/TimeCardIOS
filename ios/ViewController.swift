@@ -9,10 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var areaView: UIView!
-    @IBOutlet weak var TextHN: UITextView!
     @IBOutlet weak var nowTimeLabel: UILabel!
     @IBOutlet weak var nowTimeLabel2: UILabel!
-    @IBOutlet weak var NameLabel: UILabel!
     @IBOutlet weak var UserIDLabel: UILabel!
     @IBOutlet weak var PasswordLabel: UILabel!
     @IBOutlet weak var Syain_cdLabel: UILabel!
@@ -64,7 +62,8 @@ class ViewController: UIViewController {
                 fn: { data in
                     DispatchQueue.main.async {
                           //取得した文字列データをUITextViewに収納
-                        self.LabelHN.text = data
+                        let str: String = data.replacingOccurrences(of: ",", with: " ").replacingOccurrences(of: "　", with: "")
+                        self.LabelHN.text = str
                         self.LabelHN.sizeToFit()
                         self.ScrollHN.contentSize = CGSize(width: self.LabelHN.frame.width, height: self.LabelHN.frame.height)
                         print(data)
@@ -82,7 +81,6 @@ class ViewController: UIViewController {
                 Result.text=rst
                 UserIDLabel.text = arr[0]
                 PasswordLabel.text = arr[1]
-                NameLabel.text = arr[2]
                 Syain_cdLabel.text = arr[3]
                 area = arr[4]
                 AreaLabel.text = arr[4]
@@ -192,6 +190,7 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                   //取得した文字列データをUITextViewに収納
                 self.LabelHN.text = data
+                self.LabelHN.numberOfLines = 0
                 self.LabelHN.sizeToFit()
                 self.ScrollHN.contentSize = CGSize(width: self.LabelHN.frame.width, height: self.LabelHN.frame.height)
             }

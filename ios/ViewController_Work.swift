@@ -49,6 +49,9 @@ class ViewController_Work: UIViewController , UIPickerViewDelegate,
         pickerView2.isHidden = true
         syutyou.text = ""
         
+        datePicker.isHidden = true
+        datePicker2.isHidden = true
+        
  
         // ピッカー設定
 //        datePicker.datePickerMode = UIDatePicker.Mode.dateAndTime
