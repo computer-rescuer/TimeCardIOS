@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		081CB70E25465ECD000294FB /* ViewController_HanMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 081CB70D25465ECD000294FB /* ViewController_HanMenu.swift */; };
 		084C76C12542B7EE00BA4CEB /* ViewController_rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084C76C02542B7EE00BA4CEB /* ViewController_rest.swift */; };
+		08638A3725B567B6002E54B5 /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08638A3625B567B6002E54B5 /* DismissKeyboard.swift */; };
 		08A6C497253FD7DB00E08B55 /* ViewController_Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6C496253FD7DB00E08B55 /* ViewController_Setting.swift */; };
 		08A6C4A1253FEF0E00E08B55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44048870253A78AB002516A1 /* Main.storyboard */; };
 		08A6C4A625401FBD00E08B55 /* AttendButton_Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08A6C4A525401FBD00E08B55 /* AttendButton_Custom.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		081CB70D25465ECD000294FB /* ViewController_HanMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_HanMenu.swift; sourceTree = "<group>"; };
 		084C76C02542B7EE00BA4CEB /* ViewController_rest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_rest.swift; sourceTree = "<group>"; };
+		08638A3625B567B6002E54B5 /* DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
 		087F91FE2558CB910065BFE6 /* Sample04 copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Sample04 copy-Info.plist"; path = "/Users/crk/Documents/TimeCardIOS/Sample04 copy-Info.plist"; sourceTree = "<absolute>"; };
 		08A6C496253FD7DB00E08B55 /* ViewController_Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_Setting.swift; sourceTree = "<group>"; };
 		08A6C4A525401FBD00E08B55 /* AttendButton_Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendButton_Custom.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				4452FE19253AF7D80080D819 /* ViewController_Work.swift */,
 				44F81A3E255B73A700B8B65E /* MyTabBarController.swift */,
 				44F81A39255B6F1800B8B65E /* ReadFromFile.swift */,
+				08638A3625B567B6002E54B5 /* DismissKeyboard.swift */,
 				08A6C496253FD7DB00E08B55 /* ViewController_Setting.swift */,
 			);
 			path = ios;
@@ -301,6 +304,7 @@
 				447E9848253B6FAB00DB1983 /* Download_crk.swift in Sources */,
 				08BB6B9225415320000EF734 /* Utility.swift in Sources */,
 				44F81A3A255B6F1800B8B65E /* ReadFromFile.swift in Sources */,
+				08638A3725B567B6002E54B5 /* DismissKeyboard.swift in Sources */,
 				081CB70E25465ECD000294FB /* ViewController_HanMenu.swift in Sources */,
 				440488A1253ACA57002516A1 /* Upload_crk.swift in Sources */,
 			);
@@ -479,14 +483,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.81;
+				CURRENT_PROJECT_VERSION = 1.8.2;
 				DEVELOPMENT_TEAM = 9QXHL748ZV;
 				INFOPLIST_FILE = "$(SRCROOT)/ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.81;
+				MARKETING_VERSION = 1.8.2;
 				PRODUCT_BUNDLE_IDENTIFIER = AppHogeHoge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -500,14 +504,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.81;
+				CURRENT_PROJECT_VERSION = 1.8.2;
 				DEVELOPMENT_TEAM = 9QXHL748ZV;
 				INFOPLIST_FILE = "$(SRCROOT)/ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.81;
+				MARKETING_VERSION = 1.8.2;
 				PRODUCT_BUNDLE_IDENTIFIER = AppHogeHoge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

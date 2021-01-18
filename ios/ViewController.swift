@@ -29,6 +29,12 @@ class ViewController: UIViewController {
     var timer: Timer!
     var WK_URL_NAME_R: String=""
     var area:String = ""
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setDismissKeyboard()
+    }
+    
 // 画面に表示された直後に呼ばれます。
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -114,7 +120,7 @@ class ViewController: UIViewController {
             nowTimeLabel.text = Utility.nowTimeGet()
             nowTimeLabel2.text = Utility.nowTimeGet2()
         }
-    
+
     @IBAction func Push(_ sender: Any) {
         //HanMenuを使う際の実装
 //        var WK_PLACE = ""
