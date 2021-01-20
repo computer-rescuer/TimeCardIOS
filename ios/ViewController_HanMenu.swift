@@ -82,6 +82,5 @@ class ViewController_HanMenu: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-   
-
 }
+

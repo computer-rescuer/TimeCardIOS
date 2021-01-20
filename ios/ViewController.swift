@@ -33,7 +33,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDismissKeyboard()
-    }
+        configureView()
+        }
+        private func configureView() {
+            setStatusBarBackgroundColor(.white)
+        }
+    
     
 // 画面に表示された直後に呼ばれます。
     override func viewDidAppear(_ animated: Bool) {
@@ -44,7 +49,7 @@ class ViewController: UIViewController {
         
         
         ///setting.txtが存在しない場合はスマホのメモリを見にいかない
-            guard let dirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        guard FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first != nil
             else {
                 fatalError("フォルダURL取得エラー")
             }
@@ -61,7 +66,7 @@ class ViewController: UIViewController {
             if (WK_file == "OK" ){
                 // 携帯のメモリから取得し、IPを生成する
                 let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
-                let WK_URL_NAME = "http://IP/syain/file_dir/pass_list.csv"
+                let WK_URL_NAME = "http://153.156.43.33/syain/file_dir/pass_list.csv"
                 WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
                 print(WK_URL_NAME_R)
                 Download_crk(stUrl: WK_URL_NAME_R,
@@ -173,7 +178,7 @@ class ViewController: UIViewController {
 
         //出勤状況エリアに格納
         let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
-        let WK_URL_NAME = "http://IP/syain/file_dir/pass_list.csv"
+        let WK_URL_NAME = "http://153.156.43.33/syain/file_dir/pass_list.csv"
         WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
         Download_crk(stUrl: WK_URL_NAME_R,
         fn: { data in
@@ -189,7 +194,7 @@ class ViewController: UIViewController {
         
     @IBAction func Reload(_ sender: Any) {
         let WK_IP: String  = UserDefaults.standard.string( forKey: "Setting1")!
-        let WK_URL_NAME = "http://IP/syain/file_dir/pass_list.csv"
+        let WK_URL_NAME = "http://153.156.43.33/syain/file_dir/pass_list.csv"
         WK_URL_NAME_R = WK_URL_NAME.replacingOccurrences(of: "IP", with: WK_IP)
     Download_crk(stUrl: WK_URL_NAME_R,
         fn: { data in
@@ -235,4 +240,23 @@ class ViewController: UIViewController {
         areaView.isHidden = true
         AreaLabel.text=UserDefaults.standard.string( forKey: "Area6")
     }
+    private final class StatusBarView: UIView { }
+
+    func setStatusBarBackgroundColor(_ color: UIColor?) {
+        for subView in self.view.subviews where subView is StatusBarView {
+            subView.removeFromSuperview()
+        }
+        guard let color = color else {
+            return
+        }
+        let statusBarView = StatusBarView()
+        statusBarView.backgroundColor = color
+        self.view.addSubview(statusBarView)
+        statusBarView.translatesAutoresizingMaskIntoConstraints = false
+        statusBarView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        statusBarView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        statusBarView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        statusBarView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+    }
 }
+

@@ -122,4 +122,30 @@ class ViewController_Setting:UIViewController{
         //実際に表示させる
         self.present(dialog, animated: true, completion: nil)
     }
+    private final class StatusBarView: UIView { }
+
+    func setStatusBarBackgroundColor(_ color: UIColor?) {
+        for subView in self.view.subviews where subView is StatusBarView {
+            subView.removeFromSuperview()
+        }
+        guard let color = color else {
+            return
+        }
+        let statusBarView = StatusBarView()
+        statusBarView.backgroundColor = color
+        self.view.addSubview(statusBarView)
+        statusBarView.translatesAutoresizingMaskIntoConstraints = false
+        statusBarView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        statusBarView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        statusBarView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        statusBarView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setDismissKeyboard()
+        configureView()
+        }
+        private func configureView() {
+            setStatusBarBackgroundColor(.white)
+        }
 }
